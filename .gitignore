@@ -215,3 +215,12 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Release builds (keep directory structure)
+releases/**/*.apk
+releases/**/*.aab
+releases/**/*.ipa
+releases/**/*.app
+!releases/.gitkeep
+!releases/**/.gitkeep
+!releases/README.md
+

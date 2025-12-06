@@ -1,0 +1,109 @@
+name: Build Flutter Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags like v1.0.0
+  workflow_dispatch:  # Allow manual triggering
+    inputs:
+      build_type:
+        description: 'Build type (apk, appbundle, or both)'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - apk
+          - appbundle
+          - both
+
+jobs:
+  build-android:
+    name: Build Android Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        working-directory: ./flutter_app
+        run: flutter pub get
+
+      - name: Build APK
+        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/')
+        working-directory: ./flutter_app
+        run: |
+          flutter build apk --release
+          mkdir -p ../../releases/android
+          cp build/app/outputs/flutter-apk/app-release.apk ../../releases/android/rural-health-connect-${GITHUB_REF_NAME#v}.apk
+
+      - name: Build App Bundle
+        if: github.event.inputs.build_type == 'appbundle' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/')
+        working-directory: ./flutter_app
+        run: |
+          flutter build appbundle --release
+          mkdir -p ../../releases/android
+          cp build/app/outputs/bundle/release/app-release.aab ../../releases/android/rural-health-connect-${GITHUB_REF_NAME#v}.aab
+
+      - name: Get version info
+        id: version
+        working-directory: ./flutter_app
+        run: |
+          VERSION=$(grep '^version:' pubspec.yaml | cut -d ' ' -f 2 | cut -d '+' -f 1)
+          BUILD=$(grep '^version:' pubspec.yaml | cut -d '+' -f 2)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "build=$BUILD" >> $GITHUB_OUTPUT
+
+      - name: Create Release Archive
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          mkdir -p releases/android
+          cd releases/android
+          if [ -f "rural-health-connect-${GITHUB_REF_NAME#v}.apk" ]; then
+            echo "APK built successfully"
+          fi
+          if [ -f "rural-health-connect-${GITHUB_REF_NAME#v}.aab" ]; then
+            echo "AAB built successfully"
+          fi
+
+      - name: Upload APK Artifact
+        if: always() && (github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/'))
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: releases/android/*.apk
+          retention-days: 30
+
+      - name: Upload AAB Artifact
+        if: always() && (github.event.inputs.build_type == 'appbundle' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/'))
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab
+          path: releases/android/*.aab
+          retention-days: 30
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            releases/android/*.apk
+            releases/android/*.aab
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
