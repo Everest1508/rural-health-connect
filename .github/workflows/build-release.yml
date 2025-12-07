@@ -38,30 +38,44 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Verify Flutter setup
+        run: |
+          flutter --version
+          echo "Checking project structure..."
+          ls -la flutter_app/ || echo "flutter_app directory not found"
+          ls -la flutter_app/lib/main.dart || echo "main.dart not found in flutter_app/lib/"
+
       - name: Get dependencies
-        working-directory: ./flutter_app
-        run: flutter pub get
+        run: |
+          cd flutter_app
+          pwd
+          ls -la lib/main.dart
+          flutter pub get
 
       - name: Build APK
         if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/')
-        working-directory: ./flutter_app
         run: |
+          cd flutter_app
+          pwd
+          ls -la lib/main.dart || (echo "Error: main.dart not found!" && find . -name "main.dart" && exit 1)
           flutter build apk --release
-          mkdir -p ../../releases/android
-          cp build/app/outputs/flutter-apk/app-release.apk ../../releases/android/rural-health-connect-${GITHUB_REF_NAME#v}.apk
+          mkdir -p ../releases/android
+          cp build/app/outputs/flutter-apk/app-release.apk ../releases/android/rural-health-connect-${GITHUB_REF_NAME#v}.apk
 
       - name: Build App Bundle
         if: github.event.inputs.build_type == 'appbundle' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/')
-        working-directory: ./flutter_app
         run: |
+          cd flutter_app
+          pwd
+          ls -la lib/main.dart || (echo "Error: main.dart not found!" && find . -name "main.dart" && exit 1)
           flutter build appbundle --release
-          mkdir -p ../../releases/android
-          cp build/app/outputs/bundle/release/app-release.aab ../../releases/android/rural-health-connect-${GITHUB_REF_NAME#v}.aab
+          mkdir -p ../releases/android
+          cp build/app/outputs/bundle/release/app-release.aab ../releases/android/rural-health-connect-${GITHUB_REF_NAME#v}.aab
 
       - name: Get version info
         id: version
-        working-directory: ./flutter_app
         run: |
+          cd flutter_app
           VERSION=$(grep '^version:' pubspec.yaml | cut -d ' ' -f 2 | cut -d '+' -f 1)
           BUILD=$(grep '^version:' pubspec.yaml | cut -d '+' -f 2)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
