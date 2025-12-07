@@ -20,6 +20,8 @@ jobs:
   build-android:
     name: Build Android Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to create releases
     
     steps:
       - name: Checkout repository
@@ -109,6 +111,13 @@ jobs:
           path: releases/android/*.aab
           retention-days: 30
 
+      - name: Verify release files exist
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "Checking for release files..."
+          ls -la releases/android/ || echo "releases/android directory not found"
+          find releases/android -name "*.apk" -o -name "*.aab" || echo "No APK/AAB files found"
+
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
@@ -118,6 +127,7 @@ jobs:
             releases/android/*.aab
           draft: false
           prerelease: false
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
