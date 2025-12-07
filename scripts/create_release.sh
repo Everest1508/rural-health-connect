@@ -43,9 +43,12 @@ cd ..
 git add flutter_app/pubspec.yaml
 git commit -m "Bump version to ${NEW_VERSION}" || echo "No changes to commit"
 
+# Get current branch name
+CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || git rev-parse --abbrev-ref HEAD)
+
 # Create and push tag
 git tag -a "${TAG}" -m "${RELEASE_MESSAGE}"
-git push origin main
+git push origin "${CURRENT_BRANCH}"
 git push origin "${TAG}"
 
 echo ""
