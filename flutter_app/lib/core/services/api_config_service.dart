@@ -1,5 +1,4 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:io';
 
 class ApiConfigService {
   static const String _baseUrlKey = 'api_base_url';
@@ -20,15 +19,8 @@ class ApiConfigService {
   
   /// Get default base URL based on platform
   static String _getDefaultBaseUrl() {
-    const String physicalDeviceIp = '192.168.1.15';
-    
-    if (Platform.isAndroid) {
-      return 'http://$physicalDeviceIp:8000/api';
-    } else if (Platform.isIOS) {
-      return 'http://$physicalDeviceIp:8000/api';
-    } else {
-      return 'http://$physicalDeviceIp:8000/api';
-    }
+    // Production server URL
+    return 'https://swasthsetu.pythonanywhere.com/api';
   }
   
   /// Save the base URL
