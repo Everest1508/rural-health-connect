@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../core/api/pharmacy_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/order_model.dart';
+import '../../l10n/app_localizations.dart';
 import 'pharmacist_orders_screen.dart';
 
 class PharmacistDashboardScreen extends StatefulWidget {
@@ -64,7 +65,7 @@ class _PharmacistDashboardScreenState extends State<PharmacistDashboardScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Dashboard',
+                    AppLocalizations.of(context)!.dashboard,
                     style: theme.textTheme.displaySmall?.copyWith(
                       fontWeight: FontWeight.w700,
                     ),

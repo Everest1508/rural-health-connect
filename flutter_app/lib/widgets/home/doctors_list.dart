@@ -5,6 +5,7 @@ import '../../core/api/doctor_service.dart';
 import '../../models/doctor_model.dart';
 import '../../providers/app_state.dart';
 import 'package:provider/provider.dart';
+import '../../l10n/app_localizations.dart';
 import '../../widgets/consult/book_appointment_dialog.dart';
 
 class DoctorsList extends StatefulWidget {
@@ -221,7 +222,7 @@ class _DoctorCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     textStyle: theme.textTheme.bodySmall,
                   ),
-                  child: Text(doctor.available ? 'Book' : 'Unavailable'),
+                  child: Text(doctor.available ? AppLocalizations.of(context)!.book : 'Unavailable'),
                 ),
               ),
             ],

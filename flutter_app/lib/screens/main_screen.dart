@@ -4,6 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import '../providers/app_state.dart';
 import '../widgets/layout/app_header.dart';
 import '../widgets/common/api_config_button.dart';
+import '../l10n/app_localizations.dart';
 import 'home/home_screen.dart';
 import 'appointments/appointments_screen.dart';
 import 'consult/consult_screen.dart';
@@ -76,35 +77,35 @@ class MainScreen extends StatelessWidget {
                 appState,
                 index: 0,
                 icon: BoxIcons.bx_home,
-                label: 'Home',
+                label: AppLocalizations.of(context)!.home,
               ),
               _buildNavItem(
                 context,
                 appState,
                 index: 1,
                 icon: BoxIcons.bx_calendar,
-                label: 'Appointments',
+                label: AppLocalizations.of(context)!.appointments,
               ),
               _buildNavItem(
                 context,
                 appState,
                 index: 2,
                 icon: BoxIcons.bx_plus_medical,
-                label: 'Consult',
+                label: AppLocalizations.of(context)!.consult,
               ),
               _buildNavItem(
                 context,
                 appState,
                 index: 3,
                 icon: BoxIcons.bx_capsule,
-                label: 'Medicines',
+                label: AppLocalizations.of(context)!.medicines,
               ),
               _buildNavItem(
                 context,
                 appState,
                 index: 4,
                 icon: BoxIcons.bx_user,
-                label: 'Profile',
+                label: AppLocalizations.of(context)!.profile,
               ),
             ],
           ),

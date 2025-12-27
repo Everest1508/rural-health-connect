@@ -11,6 +11,10 @@ class AppState extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
   ThemeMode get themeMode => _themeMode;
 
+  // Language/Locale
+  Locale _locale = const Locale('en');
+  Locale get locale => _locale;
+
   // Current user info
   String _userName = 'Ram Singh';
   String _userLocation = 'Nabha, Punjab';
@@ -29,6 +33,7 @@ class AppState extends ChangeNotifier {
   AppState() {
     _loadAuthState();
     _loadThemeState();
+    _loadLanguageState();
   }
 
   Future<void> _loadAuthState() async {
@@ -52,6 +57,20 @@ class AppState extends ChangeNotifier {
       _themeMode = themeModeString == 'dark' ? ThemeMode.dark : ThemeMode.light;
       notifyListeners();
     }
+  }
+
+  Future<void> _loadLanguageState() async {
+    final prefs = await SharedPreferences.getInstance();
+    final languageCode = prefs.getString('languageCode') ?? 'en';
+    _locale = Locale(languageCode);
+    notifyListeners();
+  }
+
+  Future<void> setLocale(Locale locale) async {
+    _locale = locale;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('languageCode', locale.languageCode);
+    notifyListeners();
   }
 
   final AuthService _authService = AuthService();

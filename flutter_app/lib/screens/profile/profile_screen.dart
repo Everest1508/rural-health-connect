@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:icons_plus/icons_plus.dart';
+import '../../l10n/app_localizations.dart';
 import '../../providers/app_state.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/error_handler.dart';
@@ -8,6 +9,8 @@ import '../notifications/notifications_screen.dart';
 import '../doctor/doctor_schedule_screen.dart';
 import '../doctor/doctor_location_screen.dart';
 import '../pharmacist/pharmacist_store_location_screen.dart';
+import '../health_records/health_records_screen.dart';
+import '../settings/language_selection_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -16,6 +19,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final appState = context.watch<AppState>();
+    final l10n = AppLocalizations.of(context)!;
     
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
@@ -82,7 +86,7 @@ class ProfileScreen extends StatelessWidget {
           _buildMenuItem(
             context,
             icon: BoxIcons.bx_user,
-            title: 'Personal Information',
+            title: l10n.personalInformation,
             onTap: () => _showPersonalInformationDialog(context, appState),
           ),
           // Doctor-specific menu items
@@ -129,10 +133,25 @@ class ProfileScreen extends StatelessWidget {
                 );
               },
             ),
+          // Health Records (for patients only)
+          if (!appState.isDoctor && !appState.isPharmacist)
+            _buildMenuItem(
+              context,
+              icon: BoxIcons.bx_file_blank,
+              title: 'Health Records',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HealthRecordsScreen(),
+                  ),
+                );
+              },
+            ),
           _buildMenuItem(
             context,
             icon: BoxIcons.bx_bell,
-            title: 'Notifications',
+            title: l10n.notifications,
             onTap: () {
               Navigator.push(
                 context,
@@ -145,7 +164,7 @@ class ProfileScreen extends StatelessWidget {
           _buildMenuItem(
             context,
             icon: BoxIcons.bx_moon,
-            title: 'Dark Mode',
+            title: l10n.darkMode,
             trailing: Switch(
               value: appState.themeMode == ThemeMode.dark,
               onChanged: (value) {
@@ -155,21 +174,50 @@ class ProfileScreen extends StatelessWidget {
           ),
           _buildMenuItem(
             context,
+            icon: BoxIcons.bx_globe,
+            title: l10n.language,
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  appState.locale.languageCode == 'hi' ? 'हिंदी' : 'English',
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.textTheme.bodySmall?.color,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Icon(
+                  Icons.chevron_right,
+                  color: theme.textTheme.bodySmall?.color,
+                ),
+              ],
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LanguageSelectionScreen(),
+                ),
+              );
+            },
+          ),
+          _buildMenuItem(
+            context,
             icon: BoxIcons.bx_help_circle,
-            title: 'Help & Support',
+            title: l10n.helpSupport,
             onTap: () => _showHelpSupport(context),
           ),
           _buildMenuItem(
             context,
             icon: BoxIcons.bx_info_circle,
-            title: 'About',
+            title: l10n.about,
             onTap: () => _showAbout(context),
           ),
           const SizedBox(height: 16),
           _buildMenuItem(
             context,
             icon: BoxIcons.bx_log_out,
-            title: 'Logout',
+            title: l10n.logout,
             textColor: AppTheme.destructiveColor,
             onTap: () => _showLogoutDialog(context, appState),
           ),
@@ -240,8 +288,10 @@ class ProfileScreen extends StatelessWidget {
 
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Personal Information'),
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(l10n.personalInformation),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -310,7 +360,8 @@ class ProfileScreen extends StatelessWidget {
             child: const Text('Save'),
           ),
         ],
-      ),
+        );
+      },
     );
   }
 

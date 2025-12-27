@@ -50,7 +50,7 @@ class _ApiConfigButtonState extends State<ApiConfigButton> {
               ),
               const SizedBox(height: 4),
               const Text(
-                'Enter the API base URL (e.g., https://swasthsetu.pythonanywhere.com/api)',
+                'Enter the API base URL (e.g., http://192.168.1.15:8000/api)',
                 style: TextStyle(fontSize: 12, color: Colors.grey),
               ),
               const SizedBox(height: 8),
@@ -58,7 +58,7 @@ class _ApiConfigButtonState extends State<ApiConfigButton> {
                 controller: urlController,
                 decoration: const InputDecoration(
                   labelText: 'Base URL',
-                  hintText: 'https://swasthsetu.pythonanywhere.com/api',
+                  hintText: 'http://192.168.1.15:8000/api',
                   border: OutlineInputBorder(),
                 ),
               ),

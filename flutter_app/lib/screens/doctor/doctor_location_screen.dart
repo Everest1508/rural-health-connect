@@ -5,6 +5,7 @@ import '../../core/services/location_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/error_handler.dart';
 import '../../models/doctor_model.dart';
+import '../../l10n/app_localizations.dart';
 
 class DoctorLocationScreen extends StatefulWidget {
   const DoctorLocationScreen({super.key});
@@ -161,16 +162,17 @@ class _DoctorLocationScreenState extends State<DoctorLocationScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
+    final l10n = AppLocalizations.of(context)!;
     if (_isLoading) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Clinic Location')),
+        appBar: AppBar(title: Text(l10n.clinicLocation)),
         body: const Center(child: CircularProgressIndicator()),
       );
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Clinic Location'),
+        title: Text(l10n.clinicLocation),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -207,7 +209,7 @@ class _DoctorLocationScreenState extends State<DoctorLocationScreen> {
             ),
             const SizedBox(height: 24),
             Text(
-              'Clinic Address',
+              l10n.clinicAddress,
               style: theme.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
@@ -299,7 +301,7 @@ class _DoctorLocationScreenState extends State<DoctorLocationScreen> {
               child: OutlinedButton.icon(
                 onPressed: _getCurrentLocation,
                 icon: const Icon(Icons.my_location),
-                label: const Text('Get Current Location'),
+                label: Text(l10n.useCurrentLocation),
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
@@ -319,7 +321,7 @@ class _DoctorLocationScreenState extends State<DoctorLocationScreen> {
                         height: 20,
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
-                    : const Text('Save Location'),
+                    : Text(l10n.save),
               ),
             ),
             if (_doctorProfile != null &&

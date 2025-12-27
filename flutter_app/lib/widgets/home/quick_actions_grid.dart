@@ -4,6 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import '../../core/theme/app_theme.dart';
 import '../../data/mock_data.dart';
 import '../../providers/app_state.dart';
+import '../../l10n/app_localizations.dart';
 
 class QuickActionsGrid extends StatelessWidget {
   const QuickActionsGrid({super.key});
@@ -11,6 +12,22 @@ class QuickActionsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
+    
+    // Map action labels to localized strings
+    final actionLabels = {
+      'Video Consult': l10n.videoConsult,
+      'Symptom Check': l10n.symptomCheck,
+      'Find Medicine': l10n.findMedicine,
+      'Nearby Pharmacy': l10n.nearbyPharmacy,
+    };
+    
+    final actionDescriptions = {
+      'Video Consult': l10n.talkToDoctorNow,
+      'Symptom Check': l10n.aiPoweredDiagnosis,
+      'Find Medicine': l10n.checkAvailabilityNearby,
+      'Nearby Pharmacy': l10n.findPharmacies,
+    };
     
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -36,14 +53,15 @@ class QuickActionsGrid extends StatelessWidget {
             itemCount: MockData.quickActions.length,
             itemBuilder: (context, index) {
               final action = MockData.quickActions[index];
+              final originalLabel = action['label'] as String;
               return _QuickActionCard(
-                label: action['label'],
-                description: action['description'],
+                label: actionLabels[originalLabel] ?? originalLabel,
+                description: actionDescriptions[originalLabel] ?? action['description'],
                 icon: _getIconData(action['icon']),
                 gradient: action['gradient'] ?? false,
                 gradientType: action['gradientType'],
                 color: action['color'],
-                onTap: () => _handleActionTap(context, action['label']),
+                onTap: () => _handleActionTap(context, originalLabel),
               );
             },
           ),

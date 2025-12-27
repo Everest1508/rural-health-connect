@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../screens/search/search_screen.dart';
+import '../../l10n/app_localizations.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key});
@@ -23,7 +25,7 @@ class SearchBarWidget extends StatelessWidget {
         ),
         child: TextField(
           decoration: InputDecoration(
-            hintText: 'Search doctors, medicines...',
+            hintText: AppLocalizations.of(context)!.searchDoctors,
             hintStyle: theme.textTheme.bodyMedium?.copyWith(
               color: theme.textTheme.bodySmall?.color,
             ),
@@ -37,8 +39,14 @@ class SearchBarWidget extends StatelessWidget {
               vertical: 12,
             ),
           ),
+          readOnly: true,
           onTap: () {
-            // TODO: Navigate to search screen
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SearchScreen(),
+              ),
+            );
           },
         ),
       ),

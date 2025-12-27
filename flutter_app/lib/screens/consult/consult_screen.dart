@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import '../../widgets/consult/doctor_booking_view.dart';
 import '../../widgets/consult/symptom_checker_view.dart';
+import '../../l10n/app_localizations.dart';
 
 class ConsultScreen extends StatefulWidget {
   const ConsultScreen({super.key});
@@ -66,14 +67,14 @@ class _ConsultScreenState extends State<ConsultScreen>
                 fontSize: 14,
               ),
               labelPadding: EdgeInsets.zero,
-              tabs: const [
+              tabs: [
                 Tab(
                   height: 40,
-                  child: Center(child: Text('Find Doctor')),
+                  child: Center(child: Text(AppLocalizations.of(context)!.findDoctor)),
                 ),
                 Tab(
                   height: 40,
-                  child: Center(child: Text('Symptom Check')),
+                  child: Center(child: Text(AppLocalizations.of(context)!.symptomCheck)),
                 ),
               ],
             ),

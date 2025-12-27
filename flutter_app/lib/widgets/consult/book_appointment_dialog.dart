@@ -5,6 +5,7 @@ import '../../core/api/appointment_service.dart';
 import '../../core/api/doctor_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../models/doctor_model.dart';
+import '../../l10n/app_localizations.dart';
 
 class BookAppointmentDialog extends StatefulWidget {
   final Doctor doctor;
@@ -226,7 +227,7 @@ class _BookAppointmentDialogState extends State<BookAppointmentDialog> {
               
               // Date Selection
               Text(
-                'Date',
+                AppLocalizations.of(context)!.date,
                 style: theme.textTheme.titleSmall,
               ),
               const SizedBox(height: 8),
@@ -235,7 +236,7 @@ class _BookAppointmentDialogState extends State<BookAppointmentDialog> {
                 icon: const Icon(Icons.calendar_today),
                 label: Text(
                   _selectedDate == null
-                      ? 'Select Date'
+                      ? AppLocalizations.of(context)!.selectDate
                       : DateFormat('MMM dd, yyyy').format(_selectedDate!),
                 ),
               ),

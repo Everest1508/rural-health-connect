@@ -4,6 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import '../../providers/app_state.dart';
 import '../../widgets/layout/app_header.dart';
 import '../../widgets/common/api_config_button.dart';
+import '../../l10n/app_localizations.dart';
 import 'pharmacist_dashboard_screen.dart';
 import 'pharmacist_orders_screen.dart';
 import '../profile/profile_screen.dart';
@@ -43,6 +44,7 @@ class PharmacistMainScreen extends StatelessWidget {
 
   Widget _buildBottomNavigationBar(BuildContext context, AppState appState) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     
     return Container(
       decoration: BoxDecoration(
@@ -72,21 +74,21 @@ class PharmacistMainScreen extends StatelessWidget {
                 appState,
                 index: 0,
                 icon: BoxIcons.bx_home,
-                label: 'Dashboard',
+                label: l10n.dashboard,
               ),
               _buildNavItem(
                 context,
                 appState,
                 index: 1,
                 icon: BoxIcons.bx_package,
-                label: 'Orders',
+                label: l10n.orders,
               ),
               _buildNavItem(
                 context,
                 appState,
                 index: 2,
                 icon: BoxIcons.bx_user,
-                label: 'Profile',
+                label: l10n.profile,
               ),
             ],
           ),

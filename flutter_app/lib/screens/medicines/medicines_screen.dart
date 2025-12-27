@@ -4,9 +4,9 @@ import 'package:intl/intl.dart';
 import '../../core/api/pharmacy_service.dart';
 import '../../core/services/location_service.dart';
 import '../../models/prescription_model.dart';
+import '../../l10n/app_localizations.dart';
 import 'prescription_list_screen.dart';
 import 'order_pharmacy_screen.dart';
-import 'orders_screen.dart';
 import 'orders_screen.dart';
 
 class MedicinesScreen extends StatefulWidget {
@@ -43,6 +43,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     
     return RefreshIndicator(
       onRefresh: _loadPrescriptions,
@@ -52,7 +53,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Medicines',
+              l10n.medicines,
               style: theme.textTheme.displaySmall?.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -60,8 +61,8 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
             const SizedBox(height: 16),
             _buildQuickAccessCard(
               context,
-              title: 'Find Nearby Pharmacy',
-              description: 'Locate pharmacies near you',
+              title: l10n.findNearbyPharmacy,
+              description: l10n.locatePharmaciesNearYou,
               icon: BoxIcons.bx_map,
               color: theme.colorScheme.primary,
               onTap: () async {
@@ -93,8 +94,8 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
             const SizedBox(height: 16),
             _buildQuickAccessCard(
               context,
-              title: 'Upload Prescription',
-              description: 'Add a new prescription',
+              title: l10n.uploadPrescription,
+              description: l10n.addNewPrescription,
               icon: BoxIcons.bx_upload,
               color: theme.colorScheme.secondary,
               onTap: () {
@@ -111,7 +112,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'My Prescriptions',
+                  l10n.myPrescriptions,
                   style: theme.textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w700,
                   ),
@@ -129,7 +130,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                         );
                       },
                       icon: const Icon(Icons.shopping_bag, size: 18),
-                      label: const Text('Orders'),
+                      label: Text(l10n.orders),
                     ),
                     TextButton(
                       onPressed: () {
@@ -140,7 +141,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                           ),
                         ).then((_) => _loadPrescriptions());
                       },
-                      child: const Text('View All'),
+                      child: Text(l10n.viewAll),
                     ),
                   ],
                 ),
@@ -228,6 +229,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
   }
 
   Widget _buildEmptyState(BuildContext context, ThemeData theme) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
@@ -243,12 +245,12 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
           ),
           const SizedBox(height: 16),
           Text(
-            'No prescriptions yet',
+            l10n.noPrescriptions,
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
           Text(
-            'Upload your first prescription to order medicines',
+            l10n.uploadYourFirstPrescription,
             style: theme.textTheme.bodySmall,
             textAlign: TextAlign.center,
           ),

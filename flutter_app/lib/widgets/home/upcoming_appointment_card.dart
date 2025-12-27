@@ -6,6 +6,7 @@ import '../../core/api/doctor_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../models/appointment_model.dart';
 import '../../providers/app_state.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
@@ -57,6 +58,7 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final appState = context.watch<AppState>();
+    final l10n = AppLocalizations.of(context)!;
     
     if (_isLoading || _upcomingAppointment == null) {
       return const SizedBox.shrink();
@@ -73,7 +75,7 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Upcoming Appointment',
+                l10n.upcomingAppointments,
                 style: theme.textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -490,7 +492,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
               icon: const Icon(Icons.calendar_today),
               label: Text(
                 _selectedDate == null
-                    ? 'Select Date'
+                    ? AppLocalizations.of(context)!.selectDate
                     : DateFormat('MMM dd, yyyy').format(_selectedDate!),
               ),
             ),

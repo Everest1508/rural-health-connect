@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/api/appointment_service.dart';
 import '../../models/appointment_model.dart';
+import '../../l10n/app_localizations.dart';
 import 'appointment_detail_dialog.dart';
 
 class DoctorAppointmentsScreen extends StatefulWidget {
@@ -101,9 +102,9 @@ class _DoctorAppointmentsScreenState extends State<DoctorAppointmentsScreen> {
                   const SizedBox(width: 8),
                   _buildFilterChip('today', 'Today'),
                   const SizedBox(width: 8),
-                  _buildFilterChip('upcoming', 'Upcoming'),
+                  _buildFilterChip('upcoming', AppLocalizations.of(context)!.upcoming),
                   const SizedBox(width: 8),
-                  _buildFilterChip('completed', 'Completed'),
+                  _buildFilterChip('completed', AppLocalizations.of(context)!.completed),
                 ],
               ),
             ),
@@ -247,7 +248,7 @@ class _DoctorAppointmentsScreenState extends State<DoctorAppointmentsScreen> {
           ),
           const SizedBox(height: 16),
           Text(
-            'No appointments found',
+            AppLocalizations.of(context)!.noAppointmentsFound,
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 8),

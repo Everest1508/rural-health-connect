@@ -7,6 +7,7 @@ import '../../core/api/pharmacy_service.dart';
 import '../../core/services/location_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../models/prescription_model.dart';
+import '../../l10n/app_localizations.dart';
 import 'order_pharmacy_screen.dart';
 
 class PrescriptionListScreen extends StatefulWidget {
@@ -50,7 +51,7 @@ class _PrescriptionListScreenState extends State<PrescriptionListScreen> {
       context: context,
       builder: (context) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          title: const Text('Upload Prescription'),
+          title: Text(AppLocalizations.of(context)!.uploadPrescription),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -193,7 +194,7 @@ class _PrescriptionListScreenState extends State<PrescriptionListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Prescriptions'),
+        title: Text(AppLocalizations.of(context)!.myPrescriptions),
       ),
       body: RefreshIndicator(
         onRefresh: _loadPrescriptions,

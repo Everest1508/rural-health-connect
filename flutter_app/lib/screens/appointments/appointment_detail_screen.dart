@@ -3,13 +3,18 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
 import '../../core/api/appointment_service.dart';
 import '../../core/api/doctor_service.dart';
+import '../../core/api/health_record_service.dart';
 import '../../core/services/location_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/appointment_model.dart';
 import '../../models/doctor_model.dart';
+import '../../models/health_record_model.dart';
 import '../../providers/app_state.dart';
+import '../../l10n/app_localizations.dart';
 import '../medicines/order_pharmacy_screen.dart';
+import '../health_records/add_health_record_screen.dart';
+import '../health_records/file_viewer_screen.dart';
 import 'package:provider/provider.dart';
 
 class AppointmentDetailScreen extends StatefulWidget {
@@ -27,10 +32,12 @@ class AppointmentDetailScreen extends StatefulWidget {
 class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
   final AppointmentService _appointmentService = AppointmentService();
   final DoctorService _doctorService = DoctorService();
+  final HealthRecordService _healthRecordService = HealthRecordService();
   final TextEditingController _notesController = TextEditingController();
   final TextEditingController _prescriptionController = TextEditingController();
   
   Appointment? _currentAppointment;
+  List<HealthRecord> _healthRecords = [];
   bool _isLoading = false;
   bool _isSaving = false;
   bool _isEditingNotes = false;
@@ -73,6 +80,8 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
           _notesController.text = appointment.notes ?? '';
           _prescriptionController.text = appointment.prescription ?? '';
         });
+        // Load health records for this appointment
+        await _loadHealthRecords();
       }
     } catch (e) {
       print('Error loading appointment: $e');
@@ -80,6 +89,21 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
       if (mounted) {
         setState(() => _isLoading = false);
       }
+    }
+  }
+
+  Future<void> _loadHealthRecords() async {
+    try {
+      final records = await _healthRecordService.getHealthRecords(
+        appointmentId: _currentAppointment!.id,
+      );
+      if (mounted) {
+        setState(() {
+          _healthRecords = records;
+        });
+      }
+    } catch (e) {
+      print('Error loading health records: $e');
     }
   }
 
@@ -538,7 +562,7 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    _buildInfoRow(Icons.calendar_today, 'Date', appointment.date),
+                    _buildInfoRow(Icons.calendar_today, AppLocalizations.of(context)!.date, appointment.date),
                     const SizedBox(height: 8),
                     _buildInfoRow(Icons.access_time, 'Time', appointment.time),
                     const SizedBox(height: 8),
@@ -578,7 +602,7 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
                       if (_doctor!.clinicAddress != null && _doctor!.clinicAddress!.isNotEmpty) ...[
                         _buildInfoRow(
                           Icons.location_on,
-                          'Clinic Address',
+                          AppLocalizations.of(context)!.clinicAddress,
                           _doctor!.clinicAddress!,
                         ),
                         const SizedBox(height: 8),
@@ -800,10 +824,194 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
                 ),
               ),
             ),
+            const SizedBox(height: 16),
+            
+            // Health Records Section
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Health Records',
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        if (isDoctor)
+                          TextButton.icon(
+                            onPressed: () async {
+                              final result = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AddHealthRecordScreen(
+                                    appointmentId: appointment.id,
+                                  ),
+                                ),
+                              );
+                              if (result == true) {
+                                await _loadHealthRecords();
+                              }
+                            },
+                            icon: const Icon(Icons.add, size: 18),
+                            label: const Text('Add Record'),
+                          ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    if (_healthRecords.isEmpty)
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Text(
+                          isDoctor
+                              ? 'No health records added yet. Tap "Add Record" to create one.'
+                              : 'No health records for this appointment.',
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.textTheme.bodySmall?.color,
+                            fontStyle: FontStyle.italic,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    else
+                      ..._healthRecords.map((record) => Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: Container(
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                color: theme.cardColor,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: theme.dividerColor.withOpacity(0.2),
+                                ),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8,
+                                          vertical: 4,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: AppTheme.primaryColor.withOpacity(0.1),
+                                          borderRadius: BorderRadius.circular(6),
+                                        ),
+                                        child: Text(
+                                          _formatHealthRecordDate(record.date),
+                                          style: theme.textTheme.bodySmall?.copyWith(
+                                            color: AppTheme.primaryColor,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                      if (record.createdByName != null) ...[
+                                        const Spacer(),
+                                        Text(
+                                          'by ${record.createdByName}',
+                                          style: theme.textTheme.bodySmall,
+                                        ),
+                                      ],
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    record.title,
+                                    style: theme.textTheme.titleSmall?.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    record.description,
+                                    style: theme.textTheme.bodySmall,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  if (record.attachmentUrl != null) ...[
+                                    const SizedBox(height: 8),
+                                    InkWell(
+                                      onTap: () => _openHealthRecordAttachment(record.attachmentUrl!),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8,
+                                          vertical: 4,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: AppTheme.primaryColor.withOpacity(0.1),
+                                          borderRadius: BorderRadius.circular(6),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              Icons.attach_file,
+                                              size: 14,
+                                              color: AppTheme.primaryColor,
+                                            ),
+                                            const SizedBox(width: 4),
+                                            Text(
+                                              AppLocalizations.of(context)!.attachmentOptional.replaceAll(' (Optional)', ''),
+                                              style: theme.textTheme.bodySmall?.copyWith(
+                                                color: AppTheme.primaryColor,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ],
+                              ),
+                            ),
+                          )),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  String _formatHealthRecordDate(String dateStr) {
+    try {
+      final date = DateTime.parse(dateStr);
+      return DateFormat('MMM dd, yyyy').format(date);
+    } catch (e) {
+      return dateStr;
+    }
+  }
+
+  Future<void> _openHealthRecordAttachment(String url) async {
+    try {
+      // Open in app viewer instead of external browser
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => FileViewerScreen(
+            fileUrl: url,
+          ),
+        ),
+      );
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Could not open attachment: ${e.toString()}'),
+            backgroundColor: AppTheme.destructiveColor,
+          ),
+        );
+      }
+    }
   }
 
   Widget _buildInfoRow(IconData icon, String label, String value) {

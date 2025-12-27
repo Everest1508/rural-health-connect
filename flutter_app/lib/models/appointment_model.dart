@@ -17,6 +17,7 @@ class Appointment {
   final String? notes; // Notes added by patient
   final String? prescription; // Prescription added by doctor
   final String? reason; // Reason for appointment
+  final List<Map<String, dynamic>>? healthRecords; // Health records associated with this appointment
 
   Appointment({
     required this.id,
@@ -33,6 +34,7 @@ class Appointment {
     this.notes,
     this.prescription,
     this.reason,
+    this.healthRecords,
   });
 
   String get typeLabel {
@@ -131,6 +133,9 @@ class Appointment {
       notes: json['notes'],
       prescription: json['prescription'],
       reason: json['reason'],
+      healthRecords: json['health_records'] != null 
+          ? List<Map<String, dynamic>>.from(json['health_records'])
+          : null,
     );
   }
   

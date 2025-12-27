@@ -1,0 +1,408 @@
+{
+  "@@locale": "en",
+  "appTitle": "Rural Health Connect",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language setting label"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Title for language selection screen"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language name"
+  },
+  "hindi": "हिंदी",
+  "@hindi": {
+    "description": "Hindi language name"
+  },
+  "marathi": "मराठी",
+  "@marathi": {
+    "description": "Marathi language name"
+  },
+  "punjabi": "ਪੰਜਾਬੀ",
+  "@punjabi": {
+    "description": "Punjabi language name"
+  },
+  "personalInformation": "Personal Information",
+  "@personalInformation": {
+    "description": "Personal information menu item"
+  },
+  "mySchedule": "My Schedule",
+  "@mySchedule": {
+    "description": "Doctor schedule menu item"
+  },
+  "clinicLocation": "Clinic Location",
+  "@clinicLocation": {
+    "description": "Clinic location menu item"
+  },
+  "storeLocation": "Store Location",
+  "@storeLocation": {
+    "description": "Store location menu item"
+  },
+  "healthRecords": "Health Records",
+  "@healthRecords": {
+    "description": "Health records menu item"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications menu item"
+  },
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "description": "Dark mode menu item"
+  },
+  "helpSupport": "Help & Support",
+  "@helpSupport": {
+    "description": "Help and support menu item"
+  },
+  "about": "About",
+  "@about": {
+    "description": "About menu item"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout menu item"
+  },
+  "welcomeBack": "Welcome Back",
+  "@welcomeBack": {
+    "description": "Login screen welcome message"
+  },
+  "signInToContinue": "Sign in to continue to Rural Health Connect",
+  "@signInToContinue": {
+    "description": "Login screen subtitle"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email field label"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password field label"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login button"
+  },
+  "dontHaveAccount": "Don't have an account?",
+  "@dontHaveAccount": {
+    "description": "Register prompt text"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Sign up link"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Register screen title"
+  },
+  "joinRuralHealthConnect": "Join Rural Health Connect",
+  "@joinRuralHealthConnect": {
+    "description": "Register screen header"
+  },
+  "createAccountToGetStarted": "Create your account to get started",
+  "@createAccountToGetStarted": {
+    "description": "Register screen subtitle"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full name field label"
+  },
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "description": "Phone number field label"
+  },
+  "location": "Location",
+  "@location": {
+    "description": "Location field label"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home navigation tab"
+  },
+  "appointments": "Appointments",
+  "@appointments": {
+    "description": "Appointments navigation tab"
+  },
+  "consult": "Consult",
+  "@consult": {
+    "description": "Consult navigation tab"
+  },
+  "medicines": "Medicines",
+  "@medicines": {
+    "description": "Medicines navigation tab"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile navigation tab"
+  },
+  "videoConsult": "Video Consult",
+  "@videoConsult": {
+    "description": "Video consult quick action"
+  },
+  "talkToDoctorNow": "Talk to a doctor now",
+  "@talkToDoctorNow": {
+    "description": "Video consult description"
+  },
+  "symptomCheck": "Symptom Check",
+  "@symptomCheck": {
+    "description": "Symptom check quick action"
+  },
+  "aiPoweredDiagnosis": "AI-powered diagnosis",
+  "@aiPoweredDiagnosis": {
+    "description": "Symptom check description"
+  },
+  "findMedicine": "Find Medicine",
+  "@findMedicine": {
+    "description": "Find medicine quick action"
+  },
+  "checkAvailabilityNearby": "Check availability nearby",
+  "@checkAvailabilityNearby": {
+    "description": "Find medicine description"
+  },
+  "nearbyPharmacy": "Nearby Pharmacy",
+  "@nearbyPharmacy": {
+    "description": "Nearby pharmacy quick action"
+  },
+  "findPharmacies": "Find pharmacies",
+  "@findPharmacies": {
+    "description": "Nearby pharmacy description"
+  },
+  "upcomingAppointments": "Upcoming Appointments",
+  "@upcomingAppointments": {
+    "description": "Upcoming appointments section title"
+  },
+  "noUpcomingAppointments": "No upcoming appointments",
+  "@noUpcomingAppointments": {
+    "description": "No appointments message"
+  },
+  "viewAll": "View All",
+  "@viewAll": {
+    "description": "View all button"
+  },
+  "searchDoctors": "Search doctors, medicines...",
+  "@searchDoctors": {
+    "description": "Search bar placeholder"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "submit": "Submit",
+  "@submit": {
+    "description": "Submit button"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading message"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error message"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Success message"
+  },
+  "book": "Book",
+  "@book": {
+    "description": "Book appointment button"
+  },
+  "upcoming": "Upcoming",
+  "@upcoming": {
+    "description": "Upcoming tab"
+  },
+  "completed": "Completed",
+  "@completed": {
+    "description": "Completed tab"
+  },
+  "cancelled": "Cancelled",
+  "@cancelled": {
+    "description": "Cancelled tab"
+  },
+  "findDoctor": "Find Doctor",
+  "@findDoctor": {
+    "description": "Find doctor tab"
+  },
+  "quickActions": "Quick Actions",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "findNearbyPharmacy": "Find Nearby Pharmacy",
+  "@findNearbyPharmacy": {
+    "description": "Find nearby pharmacy card title"
+  },
+  "locatePharmaciesNearYou": "Locate pharmacies near you",
+  "@locatePharmaciesNearYou": {
+    "description": "Find nearby pharmacy description"
+  },
+  "uploadPrescription": "Upload Prescription",
+  "@uploadPrescription": {
+    "description": "Upload prescription card title"
+  },
+  "addNewPrescription": "Add a new prescription",
+  "@addNewPrescription": {
+    "description": "Upload prescription description"
+  },
+  "myPrescriptions": "My Prescriptions",
+  "@myPrescriptions": {
+    "description": "My prescriptions section title"
+  },
+  "orders": "Orders",
+  "@orders": {
+    "description": "Orders button"
+  },
+  "noPrescriptions": "No prescriptions yet",
+  "@noPrescriptions": {
+    "description": "No prescriptions message"
+  },
+  "uploadYourFirstPrescription": "Upload your first prescription to get started",
+  "@uploadYourFirstPrescription": {
+    "description": "No prescriptions prompt"
+  },
+  "enterYourSymptoms": "Enter your symptoms",
+  "@enterYourSymptoms": {
+    "description": "Symptom checker input placeholder"
+  },
+  "checkSymptoms": "Check Symptoms",
+  "@checkSymptoms": {
+    "description": "Check symptoms button"
+  },
+  "selectDate": "Select Date",
+  "@selectDate": {
+    "description": "Select date button"
+  },
+  "title": "Title",
+  "@title": {
+    "description": "Title field label"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Description field label"
+  },
+  "addHealthRecord": "Add Health Record",
+  "@addHealthRecord": {
+    "description": "Add health record screen title"
+  },
+  "date": "Date",
+  "@date": {
+    "description": "Date label"
+  },
+  "attachmentOptional": "Attachment (Optional)",
+  "@attachmentOptional": {
+    "description": "Attachment section title"
+  },
+  "attachFile": "Attach File",
+  "@attachFile": {
+    "description": "Attach file button"
+  },
+  "saveHealthRecord": "Save Health Record",
+  "@saveHealthRecord": {
+    "description": "Save health record button"
+  },
+  "storeName": "Store Name",
+  "@storeName": {
+    "description": "Store name field label"
+  },
+  "storeAddress": "Store Address",
+  "@storeAddress": {
+    "description": "Store address field label"
+  },
+  "storeInformation": "Store Information",
+  "@storeInformation": {
+    "description": "Store information section title"
+  },
+  "useCurrentLocation": "Use Current Location",
+  "@useCurrentLocation": {
+    "description": "Use current location button"
+  },
+  "clinicAddress": "Clinic Address",
+  "@clinicAddress": {
+    "description": "Clinic address field label"
+  },
+  "clinicInformation": "Clinic Information",
+  "@clinicInformation": {
+    "description": "Clinic information section title"
+  },
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard tab"
+  },
+  "myOrders": "My Orders",
+  "@myOrders": {
+    "description": "My orders tab"
+  },
+  "noAppointmentsFound": "No appointments found",
+  "@noAppointmentsFound": {
+    "description": "No appointments message"
+  },
+  "noDoctorsFound": "No doctors found",
+  "@noDoctorsFound": {
+    "description": "No doctors message"
+  },
+  "tryDifferentSearchTerm": "Try a different search term",
+  "@tryDifferentSearchTerm": {
+    "description": "Search no results message"
+  },
+  "startTypingToSearch": "Start typing to search",
+  "@startTypingToSearch": {
+    "description": "Search empty state message"
+  },
+  "searchByNameOrSpecialty": "Search by name or specialty...",
+  "@searchByNameOrSpecialty": {
+    "description": "Doctor search placeholder"
+  },
+  "noDoctorsAvailable": "No doctors available",
+  "@noDoctorsAvailable": {
+    "description": "No doctors available message"
+  },
+  "healthTips": "Health Tips",
+  "@healthTips": {
+    "description": "Health tips section title"
+  },
+  "stayHydrated": "Stay Hydrated",
+  "@stayHydrated": {
+    "description": "Health tip title"
+  },
+  "drinkAtLeast8Glasses": "Drink at least 8 glasses of water daily",
+  "@drinkAtLeast8Glasses": {
+    "description": "Health tip description"
+  },
+  "regularExercise": "Regular Exercise",
+  "@regularExercise": {
+    "description": "Health tip title"
+  },
+  "thirtyMinutesPhysicalActivity": "30 minutes of physical activity each day",
+  "@thirtyMinutesPhysicalActivity": {
+    "description": "Health tip description"
+  },
+  "balancedDiet": "Balanced Diet",
+  "@balancedDiet": {
+    "description": "Health tip title"
+  },
+  "includeFruitsVegetables": "Include fruits and vegetables in every meal",
+  "@includeFruitsVegetables": {
+    "description": "Health tip description"
+  },
+  "qualitySleep": "Quality Sleep",
+  "@qualitySleep": {
+    "description": "Health tip title"
+  },
+  "get7To8HoursSleep": "Get 7-8 hours of sleep every night",
+  "@get7To8HoursSleep": {
+    "description": "Health tip description"
+  },
+  "availableDoctors": "Available Doctors",
+  "@availableDoctors": {
+    "description": "Available doctors section title"
+  }
+}
+

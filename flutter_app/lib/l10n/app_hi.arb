@@ -1,0 +1,408 @@
+{
+  "@@locale": "hi",
+  "appTitle": "ग्रामीण स्वास्थ्य कनेक्ट",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "language": "भाषा",
+  "@language": {
+    "description": "Language setting label"
+  },
+  "selectLanguage": "भाषा चुनें",
+  "@selectLanguage": {
+    "description": "Title for language selection screen"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language name"
+  },
+  "hindi": "हिंदी",
+  "@hindi": {
+    "description": "Hindi language name"
+  },
+  "marathi": "मराठी",
+  "@marathi": {
+    "description": "Marathi language name"
+  },
+  "punjabi": "ਪੰਜਾਬੀ",
+  "@punjabi": {
+    "description": "Punjabi language name"
+  },
+  "personalInformation": "व्यक्तिगत जानकारी",
+  "@personalInformation": {
+    "description": "Personal information menu item"
+  },
+  "mySchedule": "मेरा कार्यक्रम",
+  "@mySchedule": {
+    "description": "Doctor schedule menu item"
+  },
+  "clinicLocation": "क्लिनिक स्थान",
+  "@clinicLocation": {
+    "description": "Clinic location menu item"
+  },
+  "storeLocation": "स्टोर स्थान",
+  "@storeLocation": {
+    "description": "Store location menu item"
+  },
+  "healthRecords": "स्वास्थ्य रिकॉर्ड",
+  "@healthRecords": {
+    "description": "Health records menu item"
+  },
+  "notifications": "सूचनाएं",
+  "@notifications": {
+    "description": "Notifications menu item"
+  },
+  "darkMode": "डार्क मोड",
+  "@darkMode": {
+    "description": "Dark mode menu item"
+  },
+  "helpSupport": "सहायता और समर्थन",
+  "@helpSupport": {
+    "description": "Help and support menu item"
+  },
+  "about": "के बारे में",
+  "@about": {
+    "description": "About menu item"
+  },
+  "logout": "लॉग आउट",
+  "@logout": {
+    "description": "Logout menu item"
+  },
+  "welcomeBack": "वापसी पर स्वागत है",
+  "@welcomeBack": {
+    "description": "Login screen welcome message"
+  },
+  "signInToContinue": "रूरल हेल्थ कनेक्ट में जारी रखने के लिए साइन इन करें",
+  "@signInToContinue": {
+    "description": "Login screen subtitle"
+  },
+  "email": "ईमेल",
+  "@email": {
+    "description": "Email field label"
+  },
+  "password": "पासवर्ड",
+  "@password": {
+    "description": "Password field label"
+  },
+  "login": "लॉग इन",
+  "@login": {
+    "description": "Login button"
+  },
+  "dontHaveAccount": "खाता नहीं है?",
+  "@dontHaveAccount": {
+    "description": "Register prompt text"
+  },
+  "signUp": "साइन अप करें",
+  "@signUp": {
+    "description": "Sign up link"
+  },
+  "createAccount": "खाता बनाएं",
+  "@createAccount": {
+    "description": "Register screen title"
+  },
+  "joinRuralHealthConnect": "रूरल हेल्थ कनेक्ट में शामिल हों",
+  "@joinRuralHealthConnect": {
+    "description": "Register screen header"
+  },
+  "createAccountToGetStarted": "शुरू करने के लिए अपना खाता बनाएं",
+  "@createAccountToGetStarted": {
+    "description": "Register screen subtitle"
+  },
+  "fullName": "पूरा नाम",
+  "@fullName": {
+    "description": "Full name field label"
+  },
+  "phoneNumber": "फोन नंबर",
+  "@phoneNumber": {
+    "description": "Phone number field label"
+  },
+  "location": "स्थान",
+  "@location": {
+    "description": "Location field label"
+  },
+  "home": "होम",
+  "@home": {
+    "description": "Home navigation tab"
+  },
+  "appointments": "अपॉइंटमेंट",
+  "@appointments": {
+    "description": "Appointments navigation tab"
+  },
+  "consult": "परामर्श",
+  "@consult": {
+    "description": "Consult navigation tab"
+  },
+  "medicines": "दवाएं",
+  "@medicines": {
+    "description": "Medicines navigation tab"
+  },
+  "profile": "प्रोफ़ाइल",
+  "@profile": {
+    "description": "Profile navigation tab"
+  },
+  "videoConsult": "वीडियो परामर्श",
+  "@videoConsult": {
+    "description": "Video consult quick action"
+  },
+  "talkToDoctorNow": "अभी डॉक्टर से बात करें",
+  "@talkToDoctorNow": {
+    "description": "Video consult description"
+  },
+  "symptomCheck": "लक्षण जांच",
+  "@symptomCheck": {
+    "description": "Symptom check quick action"
+  },
+  "aiPoweredDiagnosis": "AI-संचालित निदान",
+  "@aiPoweredDiagnosis": {
+    "description": "Symptom check description"
+  },
+  "findMedicine": "दवा खोजें",
+  "@findMedicine": {
+    "description": "Find medicine quick action"
+  },
+  "checkAvailabilityNearby": "आस-पास उपलब्धता जांचें",
+  "@checkAvailabilityNearby": {
+    "description": "Find medicine description"
+  },
+  "nearbyPharmacy": "निकटतम फार्मेसी",
+  "@nearbyPharmacy": {
+    "description": "Nearby pharmacy quick action"
+  },
+  "findPharmacies": "फार्मेसी खोजें",
+  "@findPharmacies": {
+    "description": "Nearby pharmacy description"
+  },
+  "upcomingAppointments": "आगामी अपॉइंटमेंट",
+  "@upcomingAppointments": {
+    "description": "Upcoming appointments section title"
+  },
+  "noUpcomingAppointments": "कोई आगामी अपॉइंटमेंट नहीं",
+  "@noUpcomingAppointments": {
+    "description": "No appointments message"
+  },
+  "viewAll": "सभी देखें",
+  "@viewAll": {
+    "description": "View all button"
+  },
+  "searchDoctors": "डॉक्टर, दवाएं खोजें...",
+  "@searchDoctors": {
+    "description": "Search bar placeholder"
+  },
+  "save": "सहेजें",
+  "@save": {
+    "description": "Save button"
+  },
+  "cancel": "रद्द करें",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "submit": "जमा करें",
+  "@submit": {
+    "description": "Submit button"
+  },
+  "loading": "लोड हो रहा है...",
+  "@loading": {
+    "description": "Loading message"
+  },
+  "error": "त्रुटि",
+  "@error": {
+    "description": "Error message"
+  },
+  "success": "सफल",
+  "@success": {
+    "description": "Success message"
+  },
+  "book": "बुक करें",
+  "@book": {
+    "description": "Book appointment button"
+  },
+  "upcoming": "आगामी",
+  "@upcoming": {
+    "description": "Upcoming tab"
+  },
+  "completed": "पूर्ण",
+  "@completed": {
+    "description": "Completed tab"
+  },
+  "cancelled": "रद्द",
+  "@cancelled": {
+    "description": "Cancelled tab"
+  },
+  "findDoctor": "डॉक्टर खोजें",
+  "@findDoctor": {
+    "description": "Find doctor tab"
+  },
+  "quickActions": "त्वरित कार्य",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "findNearbyPharmacy": "निकटतम फार्मेसी खोजें",
+  "@findNearbyPharmacy": {
+    "description": "Find nearby pharmacy card title"
+  },
+  "locatePharmaciesNearYou": "आपके पास फार्मेसी खोजें",
+  "@locatePharmaciesNearYou": {
+    "description": "Find nearby pharmacy description"
+  },
+  "uploadPrescription": "प्रिस्क्रिप्शन अपलोड करें",
+  "@uploadPrescription": {
+    "description": "Upload prescription card title"
+  },
+  "addNewPrescription": "नई प्रिस्क्रिप्शन जोड़ें",
+  "@addNewPrescription": {
+    "description": "Upload prescription description"
+  },
+  "myPrescriptions": "मेरी प्रिस्क्रिप्शन",
+  "@myPrescriptions": {
+    "description": "My prescriptions section title"
+  },
+  "orders": "ऑर्डर",
+  "@orders": {
+    "description": "Orders button"
+  },
+  "noPrescriptions": "अभी तक कोई प्रिस्क्रिप्शन नहीं",
+  "@noPrescriptions": {
+    "description": "No prescriptions message"
+  },
+  "uploadYourFirstPrescription": "शुरू करने के लिए अपनी पहली प्रिस्क्रिप्शन अपलोड करें",
+  "@uploadYourFirstPrescription": {
+    "description": "No prescriptions prompt"
+  },
+  "enterYourSymptoms": "अपने लक्षण दर्ज करें",
+  "@enterYourSymptoms": {
+    "description": "Symptom checker input placeholder"
+  },
+  "checkSymptoms": "लक्षण जांचें",
+  "@checkSymptoms": {
+    "description": "Check symptoms button"
+  },
+  "selectDate": "तारीख चुनें",
+  "@selectDate": {
+    "description": "Select date button"
+  },
+  "title": "शीर्षक",
+  "@title": {
+    "description": "Title field label"
+  },
+  "description": "विवरण",
+  "@description": {
+    "description": "Description field label"
+  },
+  "addHealthRecord": "स्वास्थ्य रिकॉर्ड जोड़ें",
+  "@addHealthRecord": {
+    "description": "Add health record screen title"
+  },
+  "date": "तारीख",
+  "@date": {
+    "description": "Date label"
+  },
+  "attachmentOptional": "अटैचमेंट (वैकल्पिक)",
+  "@attachmentOptional": {
+    "description": "Attachment section title"
+  },
+  "attachFile": "फ़ाइल संलग्न करें",
+  "@attachFile": {
+    "description": "Attach file button"
+  },
+  "saveHealthRecord": "स्वास्थ्य रिकॉर्ड सहेजें",
+  "@saveHealthRecord": {
+    "description": "Save health record button"
+  },
+  "storeName": "स्टोर का नाम",
+  "@storeName": {
+    "description": "Store name field label"
+  },
+  "storeAddress": "स्टोर का पता",
+  "@storeAddress": {
+    "description": "Store address field label"
+  },
+  "storeInformation": "स्टोर जानकारी",
+  "@storeInformation": {
+    "description": "Store information section title"
+  },
+  "useCurrentLocation": "वर्तमान स्थान का उपयोग करें",
+  "@useCurrentLocation": {
+    "description": "Use current location button"
+  },
+  "clinicAddress": "क्लिनिक का पता",
+  "@clinicAddress": {
+    "description": "Clinic address field label"
+  },
+  "clinicInformation": "क्लिनिक जानकारी",
+  "@clinicInformation": {
+    "description": "Clinic information section title"
+  },
+  "dashboard": "डैशबोर्ड",
+  "@dashboard": {
+    "description": "Dashboard tab"
+  },
+  "myOrders": "मेरे ऑर्डर",
+  "@myOrders": {
+    "description": "My orders tab"
+  },
+  "noAppointmentsFound": "कोई अपॉइंटमेंट नहीं मिला",
+  "@noAppointmentsFound": {
+    "description": "No appointments message"
+  },
+  "noDoctorsFound": "कोई डॉक्टर नहीं मिला",
+  "@noDoctorsFound": {
+    "description": "No doctors message"
+  },
+  "tryDifferentSearchTerm": "एक अलग खोज शब्द आज़माएं",
+  "@tryDifferentSearchTerm": {
+    "description": "Search no results message"
+  },
+  "startTypingToSearch": "खोज शुरू करने के लिए टाइप करें",
+  "@startTypingToSearch": {
+    "description": "Search empty state message"
+  },
+  "searchByNameOrSpecialty": "नाम या विशेषज्ञता से खोजें...",
+  "@searchByNameOrSpecialty": {
+    "description": "Doctor search placeholder"
+  },
+  "noDoctorsAvailable": "कोई डॉक्टर उपलब्ध नहीं",
+  "@noDoctorsAvailable": {
+    "description": "No doctors available message"
+  },
+  "healthTips": "स्वास्थ्य सुझाव",
+  "@healthTips": {
+    "description": "Health tips section title"
+  },
+  "stayHydrated": "हाइड्रेटेड रहें",
+  "@stayHydrated": {
+    "description": "Health tip title"
+  },
+  "drinkAtLeast8Glasses": "प्रतिदिन कम से कम 8 गिलास पानी पिएं",
+  "@drinkAtLeast8Glasses": {
+    "description": "Health tip description"
+  },
+  "regularExercise": "नियमित व्यायाम",
+  "@regularExercise": {
+    "description": "Health tip title"
+  },
+  "thirtyMinutesPhysicalActivity": "प्रतिदिन 30 मिनट शारीरिक गतिविधि",
+  "@thirtyMinutesPhysicalActivity": {
+    "description": "Health tip description"
+  },
+  "balancedDiet": "संतुलित आहार",
+  "@balancedDiet": {
+    "description": "Health tip title"
+  },
+  "includeFruitsVegetables": "हर भोजन में फल और सब्जियां शामिल करें",
+  "@includeFruitsVegetables": {
+    "description": "Health tip description"
+  },
+  "qualitySleep": "गुणवत्तापूर्ण नींद",
+  "@qualitySleep": {
+    "description": "Health tip title"
+  },
+  "get7To8HoursSleep": "हर रात 7-8 घंटे की नींद लें",
+  "@get7To8HoursSleep": {
+    "description": "Health tip description"
+  },
+  "availableDoctors": "उपलब्ध डॉक्टर",
+  "@availableDoctors": {
+    "description": "Available doctors section title"
+  }
+}
+

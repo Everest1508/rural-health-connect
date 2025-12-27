@@ -4,6 +4,7 @@ import '../../core/api/pharmacy_service.dart';
 import '../../core/services/location_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../models/pharmacist_model.dart';
+import '../../l10n/app_localizations.dart';
 
 class PharmacistStoreLocationScreen extends StatefulWidget {
   const PharmacistStoreLocationScreen({super.key});
@@ -130,10 +131,11 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Store Location'),
+        title: Text(l10n.storeLocation),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -145,7 +147,7 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Store Information',
+                      l10n.storeInformation,
                       style: theme.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -153,11 +155,11 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
                     const SizedBox(height: 24),
                     TextFormField(
                       controller: _storeNameController,
-                      decoration: const InputDecoration(
-                        labelText: 'Store Name *',
+                      decoration: InputDecoration(
+                        labelText: '${l10n.storeName} *',
                         hintText: 'Enter store name',
-                        prefixIcon: Icon(Icons.store),
-                        border: OutlineInputBorder(),
+                        prefixIcon: const Icon(Icons.store),
+                        border: const OutlineInputBorder(),
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -169,11 +171,11 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
                     const SizedBox(height: 16),
                     TextFormField(
                       controller: _storeAddressController,
-                      decoration: const InputDecoration(
-                        labelText: 'Store Address *',
+                      decoration: InputDecoration(
+                        labelText: '${l10n.storeAddress} *',
                         hintText: 'Enter store address',
-                        prefixIcon: Icon(Icons.location_on),
-                        border: OutlineInputBorder(),
+                        prefixIcon: const Icon(Icons.location_on),
+                        border: const OutlineInputBorder(),
                       ),
                       maxLines: 3,
                       validator: (value) {
@@ -196,7 +198,7 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
                     ),
                     const SizedBox(height: 24),
                     Text(
-                      'Location',
+                      l10n.location,
                       style: theme.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -243,7 +245,7 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
                       child: ElevatedButton.icon(
                         onPressed: _getCurrentLocation,
                         icon: const Icon(Icons.my_location),
-                        label: const Text('Use Current Location'),
+                        label: Text(l10n.useCurrentLocation),
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                         ),
@@ -263,7 +265,7 @@ class _PharmacistStoreLocationScreenState extends State<PharmacistStoreLocationS
                                 width: 20,
                                 child: CircularProgressIndicator(strokeWidth: 2),
                               )
-                            : const Text('Save Store Location'),
+                            : Text(l10n.save),
                       ),
                     ),
                   ],

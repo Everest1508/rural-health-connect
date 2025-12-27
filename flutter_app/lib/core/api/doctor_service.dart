@@ -131,5 +131,32 @@ class DoctorService {
       return false;
     }
   }
+
+  /// Search doctors by query
+  Future<List<Doctor>> searchDoctors(String query) async {
+    try {
+      final response = await _api.get(
+        '/appointments/doctors/',
+        queryParameters: {'search': query},
+      );
+      
+      if (response.statusCode == 200) {
+        final responseData = response.data;
+        List<dynamic> data;
+        if (responseData is Map && responseData.containsKey('results')) {
+          data = responseData['results'];
+        } else if (responseData is List) {
+          data = responseData;
+        } else {
+          data = [];
+        }
+        return data.map((json) => Doctor.fromJson(json)).toList();
+      }
+      return [];
+    } catch (e) {
+      print('❌ DoctorService.searchDoctors Error: $e');
+      return [];
+    }
+  }
 }
 

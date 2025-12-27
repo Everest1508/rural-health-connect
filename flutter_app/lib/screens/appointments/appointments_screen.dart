@@ -8,6 +8,7 @@ import '../../core/utils/error_handler.dart';
 import '../../core/theme/app_theme.dart';
 import '../../widgets/consult/book_appointment_dialog.dart';
 import '../../models/doctor_model.dart';
+import '../../l10n/app_localizations.dart';
 import 'appointment_detail_screen.dart';
 
 class AppointmentsScreen extends StatefulWidget {
@@ -71,6 +72,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     
     return Column(
       children: [
@@ -80,7 +82,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Appointments',
+                l10n.appointments,
                 style: theme.textTheme.displaySmall?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -88,7 +90,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
               ElevatedButton.icon(
                 onPressed: () => _showBookAppointmentDialog(context),
                 icon: const Icon(Icons.add, size: 18),
-                label: const Text('Book'),
+                label: Text(l10n.book),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
@@ -133,18 +135,18 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
                 fontSize: 14,
               ),
               labelPadding: EdgeInsets.zero,
-              tabs: const [
+              tabs: [
                 Tab(
                   height: 40,
-                  child: Center(child: Text('Upcoming')),
+                  child: Center(child: Text(AppLocalizations.of(context)!.upcoming)),
                 ),
                 Tab(
                   height: 40,
-                  child: Center(child: Text('Completed')),
+                  child: Center(child: Text(AppLocalizations.of(context)!.completed)),
                 ),
                 Tab(
                   height: 40,
-                  child: Center(child: Text('Cancelled')),
+                  child: Center(child: Text(AppLocalizations.of(context)!.cancelled)),
                 ),
               ],
             ),

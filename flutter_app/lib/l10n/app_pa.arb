@@ -1,0 +1,408 @@
+{
+  "@@locale": "pa",
+  "appTitle": "ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "language": "ਭਾਸ਼ਾ",
+  "@language": {
+    "description": "Language setting label"
+  },
+  "selectLanguage": "ਭਾਸ਼ਾ ਚੁਣੋ",
+  "@selectLanguage": {
+    "description": "Title for language selection screen"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language name"
+  },
+  "hindi": "हिंदी",
+  "@hindi": {
+    "description": "Hindi language name"
+  },
+  "marathi": "मराठी",
+  "@marathi": {
+    "description": "Marathi language name"
+  },
+  "punjabi": "ਪੰਜਾਬੀ",
+  "@punjabi": {
+    "description": "Punjabi language name"
+  },
+  "personalInformation": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ",
+  "@personalInformation": {
+    "description": "Personal information menu item"
+  },
+  "mySchedule": "ਮੇਰਾ ਸਮਾਸੂਚੀ",
+  "@mySchedule": {
+    "description": "Doctor schedule menu item"
+  },
+  "clinicLocation": "ਕਲੀਨਿਕ ਸਥਾਨ",
+  "@clinicLocation": {
+    "description": "Clinic location menu item"
+  },
+  "storeLocation": "ਸਟੋਰ ਸਥਾਨ",
+  "@storeLocation": {
+    "description": "Store location menu item"
+  },
+  "healthRecords": "ਸਿਹਤ ਰਿਕਾਰਡ",
+  "@healthRecords": {
+    "description": "Health records menu item"
+  },
+  "notifications": "ਸੂਚਨਾਵਾਂ",
+  "@notifications": {
+    "description": "Notifications menu item"
+  },
+  "darkMode": "ਡਾਰਕ ਮੋਡ",
+  "@darkMode": {
+    "description": "Dark mode menu item"
+  },
+  "helpSupport": "ਮਦਦ ਅਤੇ ਸਹਾਇਤਾ",
+  "@helpSupport": {
+    "description": "Help and support menu item"
+  },
+  "about": "ਬਾਰੇ",
+  "@about": {
+    "description": "About menu item"
+  },
+  "logout": "ਲਾਗ ਆਉਟ",
+  "@logout": {
+    "description": "Logout menu item"
+  },
+  "welcomeBack": "ਵਾਪਸੀ 'ਤੇ ਸਵਾਗਤ",
+  "@welcomeBack": {
+    "description": "Login screen welcome message"
+  },
+  "signInToContinue": "ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ ਵਿੱਚ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ",
+  "@signInToContinue": {
+    "description": "Login screen subtitle"
+  },
+  "email": "ਈਮੇਲ",
+  "@email": {
+    "description": "Email field label"
+  },
+  "password": "ਪਾਸਵਰਡ",
+  "@password": {
+    "description": "Password field label"
+  },
+  "login": "ਲਾਗ ਇਨ",
+  "@login": {
+    "description": "Login button"
+  },
+  "dontHaveAccount": "ਖਾਤਾ ਨਹੀਂ ਹੈ?",
+  "@dontHaveAccount": {
+    "description": "Register prompt text"
+  },
+  "signUp": "ਸਾਈਨ ਅਪ ਕਰੋ",
+  "@signUp": {
+    "description": "Sign up link"
+  },
+  "createAccount": "ਖਾਤਾ ਬਣਾਓ",
+  "@createAccount": {
+    "description": "Register screen title"
+  },
+  "joinRuralHealthConnect": "ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ",
+  "@joinRuralHealthConnect": {
+    "description": "Register screen header"
+  },
+  "createAccountToGetStarted": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਆਪਣਾ ਖਾਤਾ ਬਣਾਓ",
+  "@createAccountToGetStarted": {
+    "description": "Register screen subtitle"
+  },
+  "fullName": "ਪੂਰਾ ਨਾਮ",
+  "@fullName": {
+    "description": "Full name field label"
+  },
+  "phoneNumber": "ਫੋਨ ਨੰਬਰ",
+  "@phoneNumber": {
+    "description": "Phone number field label"
+  },
+  "location": "ਸਥਾਨ",
+  "@location": {
+    "description": "Location field label"
+  },
+  "home": "ਹੋਮ",
+  "@home": {
+    "description": "Home navigation tab"
+  },
+  "appointments": "ਅਪਾਇੰਟਮੈਂਟ",
+  "@appointments": {
+    "description": "Appointments navigation tab"
+  },
+  "consult": "ਸਲਾਹ",
+  "@consult": {
+    "description": "Consult navigation tab"
+  },
+  "medicines": "ਦਵਾਈਆਂ",
+  "@medicines": {
+    "description": "Medicines navigation tab"
+  },
+  "profile": "ਪ੍ਰੋਫਾਈਲ",
+  "@profile": {
+    "description": "Profile navigation tab"
+  },
+  "videoConsult": "ਵੀਡੀਓ ਸਲਾਹ",
+  "@videoConsult": {
+    "description": "Video consult quick action"
+  },
+  "talkToDoctorNow": "ਹੁਣ ਡਾਕਟਰ ਨਾਲ ਬੋਲੋ",
+  "@talkToDoctorNow": {
+    "description": "Video consult description"
+  },
+  "symptomCheck": "ਲੱਛਣ ਜਾਂਚ",
+  "@symptomCheck": {
+    "description": "Symptom check quick action"
+  },
+  "aiPoweredDiagnosis": "AI-ਸੰਚਾਲਿਤ ਨਿਦਾਨ",
+  "@aiPoweredDiagnosis": {
+    "description": "Symptom check description"
+  },
+  "findMedicine": "ਦਵਾਈ ਲੱਭੋ",
+  "@findMedicine": {
+    "description": "Find medicine quick action"
+  },
+  "checkAvailabilityNearby": "ਨੇੜੇ ਉਪਲਬਧਤਾ ਜਾਂਚੋ",
+  "@checkAvailabilityNearby": {
+    "description": "Find medicine description"
+  },
+  "nearbyPharmacy": "ਨੇੜਲੀ ਫਾਰਮੇਸੀ",
+  "@nearbyPharmacy": {
+    "description": "Nearby pharmacy quick action"
+  },
+  "findPharmacies": "ਫਾਰਮੇਸੀਆਂ ਲੱਭੋ",
+  "@findPharmacies": {
+    "description": "Nearby pharmacy description"
+  },
+  "upcomingAppointments": "ਆਉਣ ਵਾਲੇ ਅਪਾਇੰਟਮੈਂਟ",
+  "@upcomingAppointments": {
+    "description": "Upcoming appointments section title"
+  },
+  "noUpcomingAppointments": "ਕੋਈ ਆਉਣ ਵਾਲੇ ਅਪਾਇੰਟਮੈਂਟ ਨਹੀਂ",
+  "@noUpcomingAppointments": {
+    "description": "No appointments message"
+  },
+  "viewAll": "ਸਭ ਦੇਖੋ",
+  "@viewAll": {
+    "description": "View all button"
+  },
+  "searchDoctors": "ਡਾਕਟਰ, ਦਵਾਈਆਂ ਖੋਜੋ...",
+  "@searchDoctors": {
+    "description": "Search bar placeholder"
+  },
+  "save": "ਸੁਰੱਖਿਅਤ ਕਰੋ",
+  "@save": {
+    "description": "Save button"
+  },
+  "cancel": "ਰੱਦ ਕਰੋ",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "submit": "ਜਮ੍ਹਾ ਕਰੋ",
+  "@submit": {
+    "description": "Submit button"
+  },
+  "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+  "@loading": {
+    "description": "Loading message"
+  },
+  "error": "ਗਲਤੀ",
+  "@error": {
+    "description": "Error message"
+  },
+  "success": "ਸਫਲ",
+  "@success": {
+    "description": "Success message"
+  },
+  "book": "ਬੁਕ ਕਰੋ",
+  "@book": {
+    "description": "Book appointment button"
+  },
+  "upcoming": "ਆਉਣ ਵਾਲੇ",
+  "@upcoming": {
+    "description": "Upcoming tab"
+  },
+  "completed": "ਪੂਰਾ",
+  "@completed": {
+    "description": "Completed tab"
+  },
+  "cancelled": "ਰੱਦ",
+  "@cancelled": {
+    "description": "Cancelled tab"
+  },
+  "findDoctor": "ਡਾਕਟਰ ਲੱਭੋ",
+  "@findDoctor": {
+    "description": "Find doctor tab"
+  },
+  "quickActions": "ਤੁਰੰਤ ਕਾਰਵਾਈਆਂ",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "findNearbyPharmacy": "ਨੇੜਲੀ ਫਾਰਮੇਸੀ ਲੱਭੋ",
+  "@findNearbyPharmacy": {
+    "description": "Find nearby pharmacy card title"
+  },
+  "locatePharmaciesNearYou": "ਆਪਣੇ ਨੇੜੇ ਫਾਰਮੇਸੀਆਂ ਲੱਭੋ",
+  "@locatePharmaciesNearYou": {
+    "description": "Find nearby pharmacy description"
+  },
+  "uploadPrescription": "ਪ੍ਰਿਸਕ੍ਰਿਪਸ਼ਨ ਅਪਲੋਡ ਕਰੋ",
+  "@uploadPrescription": {
+    "description": "Upload prescription card title"
+  },
+  "addNewPrescription": "ਨਵੀਂ ਪ੍ਰਿਸਕ੍ਰਿਪਸ਼ਨ ਜੋੜੋ",
+  "@addNewPrescription": {
+    "description": "Upload prescription description"
+  },
+  "myPrescriptions": "ਮੇਰੀਆਂ ਪ੍ਰਿਸਕ੍ਰਿਪਸ਼ਨਾਂ",
+  "@myPrescriptions": {
+    "description": "My prescriptions section title"
+  },
+  "orders": "ਆਰਡਰ",
+  "@orders": {
+    "description": "Orders button"
+  },
+  "noPrescriptions": "ਅਜੇ ਕੋਈ ਪ੍ਰਿਸਕ੍ਰਿਪਸ਼ਨ ਨਹੀਂ",
+  "@noPrescriptions": {
+    "description": "No prescriptions message"
+  },
+  "uploadYourFirstPrescription": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਆਪਣੀ ਪਹਿਲੀ ਪ੍ਰਿਸਕ੍ਰਿਪਸ਼ਨ ਅਪਲੋਡ ਕਰੋ",
+  "@uploadYourFirstPrescription": {
+    "description": "No prescriptions prompt"
+  },
+  "enterYourSymptoms": "ਆਪਣੇ ਲੱਛਣ ਦਰਜ ਕਰੋ",
+  "@enterYourSymptoms": {
+    "description": "Symptom checker input placeholder"
+  },
+  "checkSymptoms": "ਲੱਛਣ ਜਾਂਚੋ",
+  "@checkSymptoms": {
+    "description": "Check symptoms button"
+  },
+  "selectDate": "ਤਾਰੀਖ ਚੁਣੋ",
+  "@selectDate": {
+    "description": "Select date button"
+  },
+  "title": "ਸਿਰਲੇਖ",
+  "@title": {
+    "description": "Title field label"
+  },
+  "description": "ਵਰਣਨ",
+  "@description": {
+    "description": "Description field label"
+  },
+  "addHealthRecord": "ਸਿਹਤ ਰਿਕਾਰਡ ਜੋੜੋ",
+  "@addHealthRecord": {
+    "description": "Add health record screen title"
+  },
+  "date": "ਤਾਰੀਖ",
+  "@date": {
+    "description": "Date label"
+  },
+  "attachmentOptional": "ਅਟੈਚਮੈਂਟ (ਵਿਕਲਪਿਕ)",
+  "@attachmentOptional": {
+    "description": "Attachment section title"
+  },
+  "attachFile": "ਫਾਈਲ ਸੰਲਗਨ ਕਰੋ",
+  "@attachFile": {
+    "description": "Attach file button"
+  },
+  "saveHealthRecord": "ਸਿਹਤ ਰਿਕਾਰਡ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+  "@saveHealthRecord": {
+    "description": "Save health record button"
+  },
+  "storeName": "ਸਟੋਰ ਦਾ ਨਾਮ",
+  "@storeName": {
+    "description": "Store name field label"
+  },
+  "storeAddress": "ਸਟੋਰ ਦਾ ਪਤਾ",
+  "@storeAddress": {
+    "description": "Store address field label"
+  },
+  "storeInformation": "ਸਟੋਰ ਜਾਣਕਾਰੀ",
+  "@storeInformation": {
+    "description": "Store information section title"
+  },
+  "useCurrentLocation": "ਮੌਜੂਦਾ ਸਥਾਨ ਵਰਤੋ",
+  "@useCurrentLocation": {
+    "description": "Use current location button"
+  },
+  "clinicAddress": "ਕਲੀਨਿਕ ਦਾ ਪਤਾ",
+  "@clinicAddress": {
+    "description": "Clinic address field label"
+  },
+  "clinicInformation": "ਕਲੀਨਿਕ ਜਾਣਕਾਰੀ",
+  "@clinicInformation": {
+    "description": "Clinic information section title"
+  },
+  "dashboard": "ਡੈਸ਼ਬੋਰਡ",
+  "@dashboard": {
+    "description": "Dashboard tab"
+  },
+  "myOrders": "ਮੇਰੇ ਆਰਡਰ",
+  "@myOrders": {
+    "description": "My orders tab"
+  },
+  "noAppointmentsFound": "ਕੋਈ ਅਪਾਇੰਟਮੈਂਟ ਨਹੀਂ ਮਿਲੇ",
+  "@noAppointmentsFound": {
+    "description": "No appointments message"
+  },
+  "noDoctorsFound": "ਕੋਈ ਡਾਕਟਰ ਨਹੀਂ ਮਿਲੇ",
+  "@noDoctorsFound": {
+    "description": "No doctors message"
+  },
+  "tryDifferentSearchTerm": "ਇੱਕ ਵੱਖਰਾ ਖੋਜ ਸ਼ਬਦ ਅਜ਼ਮਾਓ",
+  "@tryDifferentSearchTerm": {
+    "description": "Search no results message"
+  },
+  "startTypingToSearch": "ਖੋਜ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਟਾਈਪ ਕਰੋ",
+  "@startTypingToSearch": {
+    "description": "Search empty state message"
+  },
+  "searchByNameOrSpecialty": "ਨਾਮ ਜਾਂ ਮਾਹਿਰੀ ਦੁਆਰਾ ਖੋਜੋ...",
+  "@searchByNameOrSpecialty": {
+    "description": "Doctor search placeholder"
+  },
+  "noDoctorsAvailable": "ਕੋਈ ਡਾਕਟਰ ਉਪਲਬਧ ਨਹੀਂ",
+  "@noDoctorsAvailable": {
+    "description": "No doctors available message"
+  },
+  "healthTips": "ਸਿਹਤ ਸੁਝਾਅ",
+  "@healthTips": {
+    "description": "Health tips section title"
+  },
+  "stayHydrated": "ਹਾਈਡ੍ਰੇਟਿਡ ਰਹੋ",
+  "@stayHydrated": {
+    "description": "Health tip title"
+  },
+  "drinkAtLeast8Glasses": "ਰੋਜ਼ਾਨਾ ਘੱਟੋ-ਘੱਟ 8 ਗਲਾਸ ਪਾਣੀ ਪੀਓ",
+  "@drinkAtLeast8Glasses": {
+    "description": "Health tip description"
+  },
+  "regularExercise": "ਨਿਯਮਿਤ ਕਸਰਤ",
+  "@regularExercise": {
+    "description": "Health tip title"
+  },
+  "thirtyMinutesPhysicalActivity": "ਹਰ ਰੋਜ਼ 30 ਮਿੰਟ ਸਰੀਰਕ ਗਤਿਵਿਧੀ",
+  "@thirtyMinutesPhysicalActivity": {
+    "description": "Health tip description"
+  },
+  "balancedDiet": "ਸੰਤੁਲਿਤ ਖੁਰਾਕ",
+  "@balancedDiet": {
+    "description": "Health tip title"
+  },
+  "includeFruitsVegetables": "ਹਰ ਭੋਜਨ ਵਿੱਚ ਫਲ ਅਤੇ ਸਬਜ਼ੀਆਂ ਸ਼ਾਮਲ ਕਰੋ",
+  "@includeFruitsVegetables": {
+    "description": "Health tip description"
+  },
+  "qualitySleep": "ਗੁਣਵੱਤਾਪੂਰਨ ਨੀਂਦ",
+  "@qualitySleep": {
+    "description": "Health tip title"
+  },
+  "get7To8HoursSleep": "ਹਰ ਰਾਤ 7-8 ਘੰਟੇ ਸੌਣਾ",
+  "@get7To8HoursSleep": {
+    "description": "Health tip description"
+  },
+  "availableDoctors": "ਉਪਲਬਧ ਡਾਕਟਰ",
+  "@availableDoctors": {
+    "description": "Available doctors section title"
+  }
+}
+

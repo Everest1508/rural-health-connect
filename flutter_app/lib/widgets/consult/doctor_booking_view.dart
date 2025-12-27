@@ -3,6 +3,7 @@ import 'package:icons_plus/icons_plus.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/api/doctor_service.dart';
 import '../../models/doctor_model.dart';
+import '../../l10n/app_localizations.dart';
 import 'book_appointment_dialog.dart';
 
 class DoctorBookingView extends StatefulWidget {
@@ -90,7 +91,7 @@ class _DoctorBookingViewState extends State<DoctorBookingView> {
             TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'Search by name or specialty...',
+                hintText: AppLocalizations.of(context)!.searchByNameOrSpecialty,
                 prefixIcon: const Icon(Icons.search),
                 filled: true,
                 fillColor: theme.cardColor,
@@ -98,7 +99,7 @@ class _DoctorBookingViewState extends State<DoctorBookingView> {
             ),
             const SizedBox(height: 24),
             Text(
-              'Available Doctors',
+              AppLocalizations.of(context)!.availableDoctors,
               style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -139,8 +140,8 @@ class _DoctorBookingViewState extends State<DoctorBookingView> {
                   padding: const EdgeInsets.all(32.0),
                   child: Text(
                     _searchController.text.isEmpty
-                        ? 'No doctors available'
-                        : 'No doctors found',
+                        ? AppLocalizations.of(context)!.noDoctorsAvailable
+                        : AppLocalizations.of(context)!.noDoctorsFound,
                     style: theme.textTheme.bodyMedium,
                   ),
                 ),

@@ -5,6 +5,7 @@ import '../../core/api/symptom_checker_service.dart';
 import '../../core/services/api_config_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/error_handler.dart';
+import '../../l10n/app_localizations.dart';
 
 class SymptomCheckerView extends StatefulWidget {
   const SymptomCheckerView({super.key});
@@ -140,6 +141,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
@@ -200,7 +202,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
             controller: _symptomsController,
             maxLines: 5,
             decoration: InputDecoration(
-              hintText: 'e.g., I have a headache and fever...',
+              hintText: l10n.enterYourSymptoms,
               filled: true,
               fillColor: theme.cardColor,
             ),

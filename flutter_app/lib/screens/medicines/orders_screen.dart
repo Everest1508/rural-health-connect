@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../core/api/pharmacy_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../models/order_model.dart';
+import '../../l10n/app_localizations.dart';
 
 class OrdersScreen extends StatefulWidget {
   const OrdersScreen({super.key});
@@ -83,7 +84,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Orders'),
+        title: Text(AppLocalizations.of(context)!.myOrders),
       ),
       body: RefreshIndicator(
         onRefresh: _loadOrders,
