@@ -29,44 +29,59 @@ class _ApiConfigButtonState extends State<ApiConfigButton> {
   }
 
   Future<void> _showConfigDialog() async {
+    // Always load the latest URL from storage when dialog opens
     final currentUrl = await ApiConfigService.getBaseUrl();
     final currentGroqKey = await ApiConfigService.getGroqApiKey();
     final urlController = TextEditingController(text: currentUrl);
     final groqKeyController = TextEditingController(text: currentGroqKey ?? '');
     
+    // Update the current URL display
+    if (mounted) {
+      setState(() {
+        _currentUrl = currentUrl;
+      });
+    }
+    
     await showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('API Configuration'),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Base URL Section
-              const Text(
-                'API Base URL',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 4),
-              const Text(
-                'Enter the API base URL (e.g., http://192.168.1.15:8000/api)',
-                style: TextStyle(fontSize: 12, color: Colors.grey),
-              ),
-              const SizedBox(height: 8),
-              TextField(
-                controller: urlController,
-                decoration: const InputDecoration(
-                  labelText: 'Base URL',
-                  hintText: 'http://192.168.1.15:8000/api',
-                  border: OutlineInputBorder(),
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('API Configuration'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Base URL Section
+                const Text(
+                  'API Base URL',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Current: $_currentUrl',
-                style: const TextStyle(fontSize: 11, color: Colors.grey),
-              ),
+                const SizedBox(height: 4),
+                const Text(
+                  'Enter the API base URL (e.g., https://swasthsetu.pythonanywhere.com/api)',
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+                const SizedBox(height: 8),
+                TextField(
+                  controller: urlController,
+                  decoration: const InputDecoration(
+                    labelText: 'Base URL',
+                    hintText: 'https://swasthsetu.pythonanywhere.com/api',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                FutureBuilder<String>(
+                  future: ApiConfigService.getBaseUrl(),
+                  builder: (context, snapshot) {
+                    final displayUrl = snapshot.data ?? currentUrl;
+                    return Text(
+                      'Current: $displayUrl',
+                      style: const TextStyle(fontSize: 11, color: Colors.grey),
+                    );
+                  },
+                ),
               const SizedBox(height: 24),
               // Groq API Key Section
               const Text(
@@ -130,32 +145,54 @@ class _ApiConfigButtonState extends State<ApiConfigButton> {
               }
               
               try {
-                await ApiConfigService.setBaseUrl(newUrl);
+                // Save the URL
+                final saved = await ApiConfigService.setBaseUrl(newUrl);
+                if (!saved) {
+                  throw Exception('Failed to save URL');
+                }
+                
+                // Update ApiClient
                 await ApiClient().updateBaseUrl(newUrl);
                 
+                // Save Groq API key
                 if (newGroqKey.isNotEmpty) {
                   await ApiConfigService.setGroqApiKey(newGroqKey);
                 } else {
                   await ApiConfigService.removeGroqApiKey();
                 }
                 
+                // Verify the saved URL
+                final savedUrl = await ApiConfigService.getBaseUrl();
+                print('✅ URL saved: $savedUrl');
+                print('✅ ApiClient base URL: ${ApiClient().baseUrl}');
+                
                 if (mounted) {
+                  // Update the current URL display
+                  setState(() {
+                    _currentUrl = savedUrl;
+                  });
+                  
                   Navigator.pop(context);
-                  _loadCurrentUrl();
+                  
+                  // Reload to ensure we have the latest
+                  await _loadCurrentUrl();
+                  
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Configuration saved successfully'),
+                    SnackBar(
+                      content: Text('Configuration saved successfully!\nBase URL: $savedUrl'),
                       backgroundColor: AppTheme.successColor,
-                      duration: Duration(seconds: 2),
+                      duration: const Duration(seconds: 3),
                     ),
                   );
                 }
               } catch (e) {
+                print('❌ Error saving URL: $e');
                 if (mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Error: ${e.toString()}'),
                       backgroundColor: AppTheme.destructiveColor,
+                      duration: const Duration(seconds: 4),
                     ),
                   );
                 }
@@ -164,6 +201,7 @@ class _ApiConfigButtonState extends State<ApiConfigButton> {
             child: const Text('Save'),
           ),
         ],
+      ),
       ),
     );
   }

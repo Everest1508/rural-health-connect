@@ -19,8 +19,8 @@ class ApiConfigService {
   
   /// Get default base URL based on platform
   static String _getDefaultBaseUrl() {
-    // Local development server URL
-    return 'http://192.168.1.15:8000/api';
+    // Production server URL
+    return 'https://swasthsetu.pythonanywhere.com/api';
   }
   
   /// Save the base URL
