@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Rural Health Connect",
+  "appTitle": "Swasth Setu",
   "@appTitle": {
     "description": "The application title"
   },
@@ -72,7 +72,7 @@
   "@welcomeBack": {
     "description": "Login screen welcome message"
   },
-  "signInToContinue": "Sign in to continue to Rural Health Connect",
+  "signInToContinue": "Sign in to continue to Swasth Setu",
   "@signInToContinue": {
     "description": "Login screen subtitle"
   },
@@ -100,7 +100,7 @@
   "@createAccount": {
     "description": "Register screen title"
   },
-  "joinRuralHealthConnect": "Join Rural Health Connect",
+  "joinRuralHealthConnect": "Join Swasth Setu",
   "@joinRuralHealthConnect": {
     "description": "Register screen header"
   },

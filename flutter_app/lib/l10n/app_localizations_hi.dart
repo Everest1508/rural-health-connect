@@ -9,7 +9,7 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get appTitle => 'ग्रामीण स्वास्थ्य कनेक्ट';
+  String get appTitle => 'स्वास्थ्य सेतु';
 
   @override
   String get language => 'भाषा';
@@ -64,7 +64,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get signInToContinue =>
-      'रूरल हेल्थ कनेक्ट में जारी रखने के लिए साइन इन करें';
+      'स्वास्थ्य सेतु में जारी रखने के लिए साइन इन करें';
 
   @override
   String get email => 'ईमेल';
@@ -85,7 +85,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get createAccount => 'खाता बनाएं';
 
   @override
-  String get joinRuralHealthConnect => 'रूरल हेल्थ कनेक्ट में शामिल हों';
+  String get joinRuralHealthConnect => 'स्वास्थ्य सेतु में शामिल हों';
 
   @override
   String get createAccountToGetStarted => 'शुरू करने के लिए अपना खाता बनाएं';

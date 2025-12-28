@@ -433,7 +433,7 @@ class ProfileScreen extends StatelessWidget {
   void _showAbout(BuildContext context) {
     showAboutDialog(
       context: context,
-      applicationName: 'Rural Health Connect',
+      applicationName: 'Swasth Setu',
       applicationVersion: '1.0.0',
       applicationIcon: Container(
         width: 64,
@@ -451,11 +451,11 @@ class ProfileScreen extends StatelessWidget {
       children: [
         const SizedBox(height: 16),
         const Text(
-          'Rural Health Connect is a healthcare platform designed to bring quality healthcare services to rural communities.',
+          'Swasth Setu is a healthcare platform designed to bring quality healthcare services to communities.',
         ),
         const SizedBox(height: 16),
         const Text(
-          '© 2024 Rural Health Connect. All rights reserved.',
+          '© 2024 Swasth Setu. All rights reserved.',
           style: TextStyle(fontSize: 12),
         ),
       ],

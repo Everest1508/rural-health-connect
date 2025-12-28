@@ -1,6 +1,6 @@
 {
   "@@locale": "pa",
-  "appTitle": "ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ",
+  "appTitle": "ਸਵਾਸਥ ਸੇਤੂ",
   "@appTitle": {
     "description": "The application title"
   },
@@ -72,7 +72,7 @@
   "@welcomeBack": {
     "description": "Login screen welcome message"
   },
-  "signInToContinue": "ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ ਵਿੱਚ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ",
+  "signInToContinue": "ਸਵਾਸਥ ਸੇਤੂ ਵਿੱਚ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ",
   "@signInToContinue": {
     "description": "Login screen subtitle"
   },
@@ -100,7 +100,7 @@
   "@createAccount": {
     "description": "Register screen title"
   },
-  "joinRuralHealthConnect": "ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ",
+  "joinRuralHealthConnect": "ਸਵਾਸਥ ਸੇਤੂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ",
   "@joinRuralHealthConnect": {
     "description": "Register screen header"
   },

@@ -9,7 +9,7 @@ class AppLocalizationsPa extends AppLocalizations {
   AppLocalizationsPa([String locale = 'pa']) : super(locale);
 
   @override
-  String get appTitle => 'ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ';
+  String get appTitle => 'ਸਵਾਸਥ ਸੇਤੂ';
 
   @override
   String get language => 'ਭਾਸ਼ਾ';
@@ -63,8 +63,7 @@ class AppLocalizationsPa extends AppLocalizations {
   String get welcomeBack => 'ਵਾਪਸੀ \'ਤੇ ਸਵਾਗਤ';
 
   @override
-  String get signInToContinue =>
-      'ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ ਵਿੱਚ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ';
+  String get signInToContinue => 'ਸਵਾਸਥ ਸੇਤੂ ਵਿੱਚ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ';
 
   @override
   String get email => 'ਈਮੇਲ';
@@ -85,7 +84,7 @@ class AppLocalizationsPa extends AppLocalizations {
   String get createAccount => 'ਖਾਤਾ ਬਣਾਓ';
 
   @override
-  String get joinRuralHealthConnect => 'ਪੇਂਡੂ ਸਿਹਤ ਕਨੈਕਟ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ';
+  String get joinRuralHealthConnect => 'ਸਵਾਸਥ ਸੇਤੂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ';
 
   @override
   String get createAccountToGetStarted => 'ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਆਪਣਾ ਖਾਤਾ ਬਣਾਓ';

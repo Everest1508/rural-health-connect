@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Rural Health Connect';
+  String get appTitle => 'Swasth Setu';
 
   @override
   String get language => 'Language';
@@ -63,7 +63,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'Welcome Back';
 
   @override
-  String get signInToContinue => 'Sign in to continue to Rural Health Connect';
+  String get signInToContinue => 'Sign in to continue to Swasth Setu';
 
   @override
   String get email => 'Email';
@@ -84,7 +84,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createAccount => 'Create Account';
 
   @override
-  String get joinRuralHealthConnect => 'Join Rural Health Connect';
+  String get joinRuralHealthConnect => 'Join Swasth Setu';
 
   @override
   String get createAccountToGetStarted => 'Create your account to get started';

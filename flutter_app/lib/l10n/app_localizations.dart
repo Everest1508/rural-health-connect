@@ -105,7 +105,7 @@ abstract class AppLocalizations {
   /// The application title
   ///
   /// In en, this message translates to:
-  /// **'Rural Health Connect'**
+  /// **'Swasth Setu'**
   String get appTitle;
 
   /// Language setting label
@@ -213,7 +213,7 @@ abstract class AppLocalizations {
   /// Login screen subtitle
   ///
   /// In en, this message translates to:
-  /// **'Sign in to continue to Rural Health Connect'**
+  /// **'Sign in to continue to Swasth Setu'**
   String get signInToContinue;
 
   /// Email field label
@@ -255,7 +255,7 @@ abstract class AppLocalizations {
   /// Register screen header
   ///
   /// In en, this message translates to:
-  /// **'Join Rural Health Connect'**
+  /// **'Join Swasth Setu'**
   String get joinRuralHealthConnect;
 
   /// Register screen subtitle

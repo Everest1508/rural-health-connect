@@ -1,6 +1,6 @@
 {
   "@@locale": "mr",
-  "appTitle": "ग्रामीण आरोग्य कनेक्ट",
+  "appTitle": "स्वास्थ्य सेतु",
   "@appTitle": {
     "description": "The application title"
   },
@@ -72,7 +72,7 @@
   "@welcomeBack": {
     "description": "Login screen welcome message"
   },
-  "signInToContinue": "ग्रामीण आरोग्य कनेक्ट मध्ये सुरू ठेवण्यासाठी साइन इन करा",
+  "signInToContinue": "स्वास्थ्य सेतु मध्ये सुरू ठेवण्यासाठी साइन इन करा",
   "@signInToContinue": {
     "description": "Login screen subtitle"
   },
@@ -100,7 +100,7 @@
   "@createAccount": {
     "description": "Register screen title"
   },
-  "joinRuralHealthConnect": "ग्रामीण आरोग्य कनेक्ट मध्ये सामील व्हा",
+  "joinRuralHealthConnect": "स्वास्थ्य सेतु मध्ये सामील व्हा",
   "@joinRuralHealthConnect": {
     "description": "Register screen header"
   },
