@@ -28,6 +28,8 @@ class ApiClient {
       },
     ));
     
+    print('🔧 Initialized ApiClient with base URL: ${_dio.options.baseUrl}');
+    
     _dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         // Add auth token to requests
@@ -114,7 +116,9 @@ class ApiClient {
   /// Update the base URL and reinitialize Dio
   Future<void> updateBaseUrl(String newBaseUrl) async {
     await ApiConfigService.setBaseUrl(newBaseUrl);
-    _initializeDio();
+    // Update the base URL directly on the existing Dio instance
+    _dio.options.baseUrl = newBaseUrl;
+    print('✅ Base URL updated to: $newBaseUrl');
   }
   
   /// Get current base URL
@@ -126,6 +130,7 @@ class ApiClient {
       final storedUrl = await ApiConfigService.getBaseUrl();
       if (storedUrl != _dio.options.baseUrl) {
         _dio.options.baseUrl = storedUrl;
+        print('✅ Loaded stored base URL: $storedUrl');
       }
     } catch (e) {
       // If loading fails, keep default URL
