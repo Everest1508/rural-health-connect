@@ -19,20 +19,23 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
   final TextEditingController _customSymptomController = TextEditingController();
   final SymptomCheckerService _symptomCheckerService = SymptomCheckerService();
   final List<String> _selectedSymptoms = [];
-  final List<String> _commonSymptoms = [
-    'Fever',
-    'Headache',
-    'Cough',
-    'Fatigue',
-    'Nausea',
-    'Body Pain',
-    'Sore Throat',
-    'Runny Nose',
-    'Dizziness',
-    'Chest Pain',
-  ];
   bool _isAnalyzing = false;
   String? _analysisResult;
+  
+  List<String> _getCommonSymptoms(AppLocalizations l10n) {
+    return [
+      l10n.fever,
+      l10n.headache,
+      l10n.cough,
+      l10n.fatigue,
+      l10n.nausea,
+      l10n.bodyPain,
+      l10n.soreThroat,
+      l10n.runnyNose,
+      l10n.dizziness,
+      l10n.chestPain,
+    ];
+  }
   
   @override
   void dispose() {
@@ -78,9 +81,10 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
     } else if (description.isNotEmpty) {
       fullSymptoms = description;
     } else {
+      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please describe your symptoms or select from common symptoms'),
+        SnackBar(
+          content: Text(l10n.pleaseDescribeSymptoms),
           backgroundColor: AppTheme.destructiveColor,
         ),
       );
@@ -97,11 +101,12 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
       final groqKey = await ApiConfigService.getGroqApiKey();
       if (groqKey == null || groqKey.isEmpty) {
         if (mounted) {
+          final l10n = AppLocalizations.of(context)!;
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Groq API key is not configured. Please add it in settings (click the settings icon).'),
+            SnackBar(
+              content: Text(l10n.groqApiKeyNotConfigured),
               backgroundColor: AppTheme.destructiveColor,
-              duration: Duration(seconds: 5),
+              duration: const Duration(seconds: 5),
             ),
           );
         }
@@ -149,14 +154,14 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Symptom Checker',
+            l10n.symptomChecker,
             style: theme.textTheme.displaySmall?.copyWith(
               fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 8),
           Text(
-            'Describe your symptoms and get preliminary health insights',
+            l10n.describeSymptomsAndGetInsights,
             style: theme.textTheme.bodyMedium?.copyWith(
               color: theme.textTheme.bodySmall?.color,
             ),
@@ -181,7 +186,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
-                    'This is not a substitute for professional medical advice',
+                    l10n.notSubstituteForMedicalAdvice,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: theme.colorScheme.primary,
                     ),
@@ -211,7 +216,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
           // Selected Symptoms
           if (_selectedSymptoms.isNotEmpty) ...[
             Text(
-              'Selected Symptoms',
+              l10n.selectedSymptoms,
               style: theme.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
@@ -232,7 +237,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
           ],
           // Common Symptoms
           Text(
-            'Common Symptoms',
+            l10n.commonSymptoms,
             style: theme.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -241,11 +246,11 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
           Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: _commonSymptoms.map((symptom) {
+            children: _getCommonSymptoms(l10n).map((symptom) {
               final isSelected = _selectedSymptoms.contains(symptom);
               return _SymptomChip(
                 label: symptom,
-                icon: _getSymptomIcon(symptom),
+                icon: _getSymptomIcon(symptom, l10n),
                 isSelected: isSelected,
                 onTap: () {
                   if (isSelected) {
@@ -260,7 +265,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
           const SizedBox(height: 24),
           // Add Custom Symptom
           Text(
-            'Add Custom Symptom',
+            l10n.addCustomSymptom,
             style: theme.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -272,7 +277,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
                 child: TextField(
                   controller: _customSymptomController,
                   decoration: InputDecoration(
-                    hintText: 'Enter custom symptom...',
+                    hintText: l10n.enterCustomSymptom,
                     filled: true,
                     fillColor: theme.cardColor,
                   ),
@@ -304,7 +309,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                     )
-                  : const Text('Analyze Symptoms'),
+                  : Text(l10n.analyzeSymptoms),
             ),
           ),
           // Analysis Result
@@ -330,7 +335,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Analysis Result',
+                        l10n.analysisResult,
                         style: theme.textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -410,30 +415,41 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
     );
   }
   
-  IconData _getSymptomIcon(String symptom) {
-    switch (symptom.toLowerCase()) {
-      case 'fever':
+  IconData _getSymptomIcon(String symptom, AppLocalizations l10n) {
+    // Map localized symptoms to icons by comparing with known localized strings
+    if (symptom == l10n.fever) {
+      return Icons.thermostat;
+    } else if (symptom == l10n.headache) {
+      return Icons.psychology;
+    } else if (symptom == l10n.cough) {
+      return Icons.air;
+    } else if (symptom == l10n.fatigue) {
+      return Icons.bedtime;
+    } else if (symptom == l10n.nausea) {
+      return Icons.sick;
+    } else if (symptom == l10n.bodyPain) {
+      return Icons.accessibility_new;
+    } else if (symptom == l10n.soreThroat) {
+      return Icons.medical_services;
+    } else if (symptom == l10n.runnyNose) {
+      return Icons.water_drop;
+    } else if (symptom == l10n.dizziness) {
+      return Icons.rotate_right;
+    } else if (symptom == l10n.chestPain) {
+      return Icons.favorite;
+    } else {
+      // For custom symptoms, try to match by English name as fallback
+      final lowerSymptom = symptom.toLowerCase();
+      if (lowerSymptom.contains('fever') || lowerSymptom.contains('बुखार') || lowerSymptom.contains('ताप')) {
         return Icons.thermostat;
-      case 'headache':
+      } else if (lowerSymptom.contains('headache') || lowerSymptom.contains('सिरदर्द') || lowerSymptom.contains('डोकेदुखी')) {
         return Icons.psychology;
-      case 'cough':
+      } else if (lowerSymptom.contains('cough') || lowerSymptom.contains('खांसी') || lowerSymptom.contains('खोकला')) {
         return Icons.air;
-      case 'fatigue':
-        return Icons.bedtime;
-      case 'nausea':
-        return Icons.sick;
-      case 'body pain':
-        return Icons.accessibility_new;
-      case 'sore throat':
-        return Icons.medical_services;
-      case 'runny nose':
-        return Icons.water_drop;
-      case 'dizziness':
-        return Icons.rotate_right;
-      case 'chest pain':
+      } else if (lowerSymptom.contains('chest') || lowerSymptom.contains('छाती') || lowerSymptom.contains('छातीत')) {
         return Icons.favorite;
-      default:
-        return Icons.medical_information;
+      }
+      return Icons.medical_information;
     }
   }
 }

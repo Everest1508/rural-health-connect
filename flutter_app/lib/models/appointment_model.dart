@@ -1,3 +1,5 @@
+import '../l10n/app_localizations.dart';
+
 enum AppointmentType { video, inPerson }
 
 enum AppointmentStatus { scheduled, confirmed, inProgress, completed, cancelled }
@@ -38,11 +40,21 @@ class Appointment {
   });
 
   String get typeLabel {
+    // This will be overridden in the UI where we have access to context
     switch (type) {
       case AppointmentType.video:
         return 'Video Consultation';
       case AppointmentType.inPerson:
         return 'In-Person Visit';
+    }
+  }
+  
+  String getLocalizedTypeLabel(AppLocalizations l10n) {
+    switch (type) {
+      case AppointmentType.video:
+        return l10n.videoConsultation;
+      case AppointmentType.inPerson:
+        return l10n.inPersonVisit;
     }
   }
   

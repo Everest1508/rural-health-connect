@@ -44,6 +44,7 @@ class _DoctorsListState extends State<DoctorsList> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final appState = context.watch<AppState>();
+    final l10n = AppLocalizations.of(context)!;
     
     return Padding(
       padding: const EdgeInsets.only(left: 16),
@@ -56,7 +57,7 @@ class _DoctorsListState extends State<DoctorsList> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Top Doctors',
+                  l10n.topDoctors,
                   style: theme.textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w700,
                   ),
@@ -66,10 +67,10 @@ class _DoctorsListState extends State<DoctorsList> {
                     appState.setTabIndex(2); // Navigate to consult tab
                   },
                   child: Row(
-                    children: const [
-                      Text('See All'),
-                      SizedBox(width: 4),
-                      Icon(Icons.chevron_right, size: 16),
+                    children: [
+                      Text(l10n.viewAll),
+                      const SizedBox(width: 4),
+                      const Icon(Icons.chevron_right, size: 16),
                     ],
                   ),
                 ),
@@ -84,7 +85,7 @@ class _DoctorsListState extends State<DoctorsList> {
                 : _doctors.isEmpty
                     ? Center(
                         child: Text(
-                          'No doctors available',
+                          l10n.noDoctorsAvailable,
                           style: theme.textTheme.bodyMedium,
                         ),
                       )
@@ -222,7 +223,7 @@ class _DoctorCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     textStyle: theme.textTheme.bodySmall,
                   ),
-                  child: Text(doctor.available ? AppLocalizations.of(context)!.book : 'Unavailable'),
+                  child: Text(doctor.available ? AppLocalizations.of(context)!.book : AppLocalizations.of(context)!.unavailable),
                 ),
               ),
             ],

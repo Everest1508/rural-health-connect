@@ -4,6 +4,7 @@ import '../../providers/app_state.dart';
 import '../../core/api/notification_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../screens/notifications/notifications_screen.dart';
+import '../../l10n/app_localizations.dart';
 
 class AppHeader extends StatefulWidget {
   const AppHeader({super.key});
@@ -33,6 +34,7 @@ class _AppHeaderState extends State<AppHeader> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final appState = context.watch<AppState>();
+    final l10n = AppLocalizations.of(context)!;
     
     return Container(
       padding: const EdgeInsets.all(16),
@@ -67,7 +69,7 @@ class _AppHeaderState extends State<AppHeader> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  _getGreeting(),
+                  _getGreeting(l10n),
                   style: theme.textTheme.bodySmall,
                 ),
                 const SizedBox(height: 2),
@@ -148,14 +150,14 @@ class _AppHeaderState extends State<AppHeader> {
     );
   }
 
-  String _getGreeting() {
+  String _getGreeting(AppLocalizations l10n) {
     final hour = DateTime.now().hour;
     if (hour < 12) {
-      return 'Good Morning';
+      return l10n.goodMorning;
     } else if (hour < 17) {
-      return 'Good Afternoon';
+      return l10n.goodAfternoon;
     } else {
-      return 'Good Evening';
+      return l10n.goodEvening;
     }
   }
 }

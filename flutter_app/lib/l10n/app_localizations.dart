@@ -707,6 +707,372 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Available Doctors'**
   String get availableDoctors;
+
+  /// Doctors tab label
+  ///
+  /// In en, this message translates to:
+  /// **'Doctors'**
+  String get doctors;
+
+  /// Pharmacies tab label
+  ///
+  /// In en, this message translates to:
+  /// **'Pharmacies'**
+  String get pharmacies;
+
+  /// Retry button
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// Search empty state message for doctors
+  ///
+  /// In en, this message translates to:
+  /// **'Search for doctors by name or specialty'**
+  String get searchForDoctorsByNameOrSpecialty;
+
+  /// Search empty state message for pharmacies
+  ///
+  /// In en, this message translates to:
+  /// **'Search for nearby pharmacies'**
+  String get searchForNearbyPharmacies;
+
+  /// Find nearby pharmacies title and button
+  ///
+  /// In en, this message translates to:
+  /// **'Find Nearby Pharmacies'**
+  String get findNearbyPharmacies;
+
+  /// Use location to find pharmacies description
+  ///
+  /// In en, this message translates to:
+  /// **'Use your location to find pharmacies near you'**
+  String get useYourLocationToFindPharmacies;
+
+  /// Book now button
+  ///
+  /// In en, this message translates to:
+  /// **'Book Now'**
+  String get bookNow;
+
+  /// Unavailable status
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get unavailable;
+
+  /// Book appointment button and dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'Book Appointment'**
+  String get bookAppointment;
+
+  /// Book appointment dialog title with doctor name
+  ///
+  /// In en, this message translates to:
+  /// **'Book Appointment with {doctorName}'**
+  String bookAppointmentWith(String doctorName);
+
+  /// Top doctors section title
+  ///
+  /// In en, this message translates to:
+  /// **'Top Doctors'**
+  String get topDoctors;
+
+  /// Find a doctor screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Find a Doctor'**
+  String get findADoctor;
+
+  /// Consultation fee label
+  ///
+  /// In en, this message translates to:
+  /// **'Consultation Fee'**
+  String get consultationFee;
+
+  /// Join Google Meet button
+  ///
+  /// In en, this message translates to:
+  /// **'Join Google Meet'**
+  String get joinGoogleMeet;
+
+  /// Join now button
+  ///
+  /// In en, this message translates to:
+  /// **'Join Now'**
+  String get joinNow;
+
+  /// View details button
+  ///
+  /// In en, this message translates to:
+  /// **'View Details'**
+  String get viewDetails;
+
+  /// Reschedule button
+  ///
+  /// In en, this message translates to:
+  /// **'Reschedule'**
+  String get reschedule;
+
+  /// Reschedule appointment dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'Reschedule Appointment'**
+  String get rescheduleAppointment;
+
+  /// Current appointment label
+  ///
+  /// In en, this message translates to:
+  /// **'Current Appointment'**
+  String get currentAppointment;
+
+  /// New date label
+  ///
+  /// In en, this message translates to:
+  /// **'New Date'**
+  String get newDate;
+
+  /// Available time slots label
+  ///
+  /// In en, this message translates to:
+  /// **'Available Time Slots'**
+  String get availableTimeSlots;
+
+  /// No available slots message
+  ///
+  /// In en, this message translates to:
+  /// **'No available slots for this date'**
+  String get noAvailableSlotsForThisDate;
+
+  /// Time label
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get time;
+
+  /// Please select date first message
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a date first to see available time slots'**
+  String get pleaseSelectDateFirst;
+
+  /// Please select date and time slot message
+  ///
+  /// In en, this message translates to:
+  /// **'Please select date and time slot'**
+  String get pleaseSelectDateAndTimeSlot;
+
+  /// Appointment rescheduled success message
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment rescheduled successfully!'**
+  String get appointmentRescheduledSuccessfully;
+
+  /// Cannot reschedule error message
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot reschedule: Doctor information missing'**
+  String get cannotRescheduleDoctorInfoMissing;
+
+  /// Could not open Google Meet link error
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open Google Meet link'**
+  String get couldNotOpenGoogleMeetLink;
+
+  /// Available label
+  ///
+  /// In en, this message translates to:
+  /// **'Available'**
+  String get available;
+
+  /// Appointment date and time format
+  ///
+  /// In en, this message translates to:
+  /// **'{date} at {time}'**
+  String appointmentAt(String date, String time);
+
+  /// Morning greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good Morning'**
+  String get goodMorning;
+
+  /// Afternoon greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good Afternoon'**
+  String get goodAfternoon;
+
+  /// Evening greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good Evening'**
+  String get goodEvening;
+
+  /// Select doctor dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'Select Doctor'**
+  String get selectDoctor;
+
+  /// Appointment cancelled message
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment cancelled'**
+  String get appointmentCancelled;
+
+  /// No appointments message with status
+  ///
+  /// In en, this message translates to:
+  /// **'No {status} Appointments'**
+  String noAppointments(String status);
+
+  /// Empty state message for appointments
+  ///
+  /// In en, this message translates to:
+  /// **'Your {status} appointments will appear here'**
+  String yourAppointmentsWillAppearHere(String status);
+
+  /// Video consultation type label
+  ///
+  /// In en, this message translates to:
+  /// **'Video Consultation'**
+  String get videoConsultation;
+
+  /// In-person visit type label
+  ///
+  /// In en, this message translates to:
+  /// **'In-Person Visit'**
+  String get inPersonVisit;
+
+  /// Symptom checker title
+  ///
+  /// In en, this message translates to:
+  /// **'Symptom Checker'**
+  String get symptomChecker;
+
+  /// Symptom checker description
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your symptoms and get preliminary health insights'**
+  String get describeSymptomsAndGetInsights;
+
+  /// Medical advice disclaimer
+  ///
+  /// In en, this message translates to:
+  /// **'This is not a substitute for professional medical advice'**
+  String get notSubstituteForMedicalAdvice;
+
+  /// Selected symptoms section title
+  ///
+  /// In en, this message translates to:
+  /// **'Selected Symptoms'**
+  String get selectedSymptoms;
+
+  /// Common symptoms section title
+  ///
+  /// In en, this message translates to:
+  /// **'Common Symptoms'**
+  String get commonSymptoms;
+
+  /// Add custom symptom section title
+  ///
+  /// In en, this message translates to:
+  /// **'Add Custom Symptom'**
+  String get addCustomSymptom;
+
+  /// Enter custom symptom hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter custom symptom...'**
+  String get enterCustomSymptom;
+
+  /// Analyze symptoms button
+  ///
+  /// In en, this message translates to:
+  /// **'Analyze Symptoms'**
+  String get analyzeSymptoms;
+
+  /// Analysis result section title
+  ///
+  /// In en, this message translates to:
+  /// **'Analysis Result'**
+  String get analysisResult;
+
+  /// Please describe symptoms message
+  ///
+  /// In en, this message translates to:
+  /// **'Please describe your symptoms or select from common symptoms'**
+  String get pleaseDescribeSymptoms;
+
+  /// Groq API key not configured message
+  ///
+  /// In en, this message translates to:
+  /// **'Groq API key is not configured. Please add it in settings (click the settings icon).'**
+  String get groqApiKeyNotConfigured;
+
+  /// Fever symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Fever'**
+  String get fever;
+
+  /// Headache symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Headache'**
+  String get headache;
+
+  /// Cough symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Cough'**
+  String get cough;
+
+  /// Fatigue symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Fatigue'**
+  String get fatigue;
+
+  /// Nausea symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Nausea'**
+  String get nausea;
+
+  /// Body pain symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Body Pain'**
+  String get bodyPain;
+
+  /// Sore throat symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Sore Throat'**
+  String get soreThroat;
+
+  /// Runny nose symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Runny Nose'**
+  String get runnyNose;
+
+  /// Dizziness symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Dizziness'**
+  String get dizziness;
+
+  /// Chest pain symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Chest Pain'**
+  String get chestPain;
 }
 
 class _AppLocalizationsDelegate

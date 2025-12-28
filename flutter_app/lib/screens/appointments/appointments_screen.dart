@@ -178,10 +178,11 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
       }
       
       // Show doctor selection dialog first
+      final l10n = AppLocalizations.of(context)!;
       final selectedDoctor = await showDialog<Doctor>(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Select Doctor'),
+          title: Text(l10n.selectDoctor),
           content: SizedBox(
             width: double.maxFinite,
             child: ListView.builder(
@@ -244,7 +245,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _loadAppointments,
-                child: const Text('Retry'),
+                child: Text(AppLocalizations.of(context)!.retry),
               ),
             ],
           ),
@@ -295,9 +296,10 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
                     int.parse(appointments[index].id),
                   );
                   if (success && mounted) {
+                    final l10n = AppLocalizations.of(context)!;
                     _loadAppointments();
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Appointment cancelled')),
+                      SnackBar(content: Text(l10n.appointmentCancelled)),
                     );
                   }
                 },
@@ -311,12 +313,23 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
 
   Widget _buildEmptyState(dynamic status) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     String statusText;
     if (status == 'upcoming') {
-      statusText = 'Upcoming';
+      statusText = l10n.upcoming;
     } else {
-      statusText = status.toString().split('.').last;
-      statusText = statusText[0].toUpperCase() + statusText.substring(1);
+      final statusString = status.toString().split('.').last;
+      // Map status to localized string
+      switch (statusString.toLowerCase()) {
+        case 'completed':
+          statusText = l10n.completed;
+          break;
+        case 'cancelled':
+          statusText = l10n.cancelled;
+          break;
+        default:
+          statusText = statusString[0].toUpperCase() + statusString.substring(1);
+      }
     }
     
     return Center(
@@ -336,14 +349,14 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
           ),
           const SizedBox(height: 16),
           Text(
-            'No $statusText Appointments',
+            l10n.noAppointments(statusText),
             style: theme.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 8),
           Text(
-            'Your ${statusText.toLowerCase()} appointments will appear here',
+            l10n.yourAppointmentsWillAppearHere(statusText.toLowerCase()),
             style: theme.textTheme.bodySmall,
             textAlign: TextAlign.center,
           ),

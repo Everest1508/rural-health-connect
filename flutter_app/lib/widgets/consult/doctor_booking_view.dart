@@ -82,7 +82,7 @@ class _DoctorBookingViewState extends State<DoctorBookingView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Find a Doctor',
+              AppLocalizations.of(context)!.findADoctor,
               style: theme.textTheme.displaySmall?.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -274,7 +274,7 @@ class _DoctorBookingCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Consultation Fee',
+                      AppLocalizations.of(context)!.consultationFee,
                       style: theme.textTheme.bodySmall,
                     ),
                     Text(
@@ -295,7 +295,7 @@ class _DoctorBookingCard extends StatelessWidget {
                     vertical: 12,
                   ),
                 ),
-                child: Text(doctor.available ? 'Book Now' : 'Unavailable'),
+                child: Text(doctor.available ? AppLocalizations.of(context)!.bookNow : AppLocalizations.of(context)!.unavailable),
               ),
             ],
           ),

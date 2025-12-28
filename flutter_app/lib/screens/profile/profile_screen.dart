@@ -138,7 +138,7 @@ class ProfileScreen extends StatelessWidget {
             _buildMenuItem(
               context,
               icon: BoxIcons.bx_file_blank,
-              title: 'Health Records',
+              title: l10n.healthRecords,
               onTap: () {
                 Navigator.push(
                   context,

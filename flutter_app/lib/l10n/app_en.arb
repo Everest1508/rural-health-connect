@@ -403,6 +403,273 @@
   "availableDoctors": "Available Doctors",
   "@availableDoctors": {
     "description": "Available doctors section title"
+  },
+  "doctors": "Doctors",
+  "@doctors": {
+    "description": "Doctors tab label"
+  },
+  "pharmacies": "Pharmacies",
+  "@pharmacies": {
+    "description": "Pharmacies tab label"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button"
+  },
+  "searchForDoctorsByNameOrSpecialty": "Search for doctors by name or specialty",
+  "@searchForDoctorsByNameOrSpecialty": {
+    "description": "Search empty state message for doctors"
+  },
+  "searchForNearbyPharmacies": "Search for nearby pharmacies",
+  "@searchForNearbyPharmacies": {
+    "description": "Search empty state message for pharmacies"
+  },
+  "findNearbyPharmacies": "Find Nearby Pharmacies",
+  "@findNearbyPharmacies": {
+    "description": "Find nearby pharmacies title and button"
+  },
+  "useYourLocationToFindPharmacies": "Use your location to find pharmacies near you",
+  "@useYourLocationToFindPharmacies": {
+    "description": "Use location to find pharmacies description"
+  },
+  "bookNow": "Book Now",
+  "@bookNow": {
+    "description": "Book now button"
+  },
+  "unavailable": "Unavailable",
+  "@unavailable": {
+    "description": "Unavailable status"
+  },
+  "bookAppointment": "Book Appointment",
+  "@bookAppointment": {
+    "description": "Book appointment button and dialog title"
+  },
+  "bookAppointmentWith": "Book Appointment with {doctorName}",
+  "@bookAppointmentWith": {
+    "description": "Book appointment dialog title with doctor name",
+    "placeholders": {
+      "doctorName": {
+        "type": "String"
+      }
+    }
+  },
+  "topDoctors": "Top Doctors",
+  "@topDoctors": {
+    "description": "Top doctors section title"
+  },
+  "findADoctor": "Find a Doctor",
+  "@findADoctor": {
+    "description": "Find a doctor screen title"
+  },
+  "consultationFee": "Consultation Fee",
+  "@consultationFee": {
+    "description": "Consultation fee label"
+  },
+  "joinGoogleMeet": "Join Google Meet",
+  "@joinGoogleMeet": {
+    "description": "Join Google Meet button"
+  },
+  "joinNow": "Join Now",
+  "@joinNow": {
+    "description": "Join now button"
+  },
+  "viewDetails": "View Details",
+  "@viewDetails": {
+    "description": "View details button"
+  },
+  "reschedule": "Reschedule",
+  "@reschedule": {
+    "description": "Reschedule button"
+  },
+  "rescheduleAppointment": "Reschedule Appointment",
+  "@rescheduleAppointment": {
+    "description": "Reschedule appointment dialog title"
+  },
+  "currentAppointment": "Current Appointment",
+  "@currentAppointment": {
+    "description": "Current appointment label"
+  },
+  "newDate": "New Date",
+  "@newDate": {
+    "description": "New date label"
+  },
+  "availableTimeSlots": "Available Time Slots",
+  "@availableTimeSlots": {
+    "description": "Available time slots label"
+  },
+  "noAvailableSlotsForThisDate": "No available slots for this date",
+  "@noAvailableSlotsForThisDate": {
+    "description": "No available slots message"
+  },
+  "time": "Time",
+  "@time": {
+    "description": "Time label"
+  },
+  "pleaseSelectDateFirst": "Please select a date first to see available time slots",
+  "@pleaseSelectDateFirst": {
+    "description": "Please select date first message"
+  },
+  "pleaseSelectDateAndTimeSlot": "Please select date and time slot",
+  "@pleaseSelectDateAndTimeSlot": {
+    "description": "Please select date and time slot message"
+  },
+  "appointmentRescheduledSuccessfully": "Appointment rescheduled successfully!",
+  "@appointmentRescheduledSuccessfully": {
+    "description": "Appointment rescheduled success message"
+  },
+  "cannotRescheduleDoctorInfoMissing": "Cannot reschedule: Doctor information missing",
+  "@cannotRescheduleDoctorInfoMissing": {
+    "description": "Cannot reschedule error message"
+  },
+  "couldNotOpenGoogleMeetLink": "Could not open Google Meet link",
+  "@couldNotOpenGoogleMeetLink": {
+    "description": "Could not open Google Meet link error"
+  },
+  "available": "Available",
+  "@available": {
+    "description": "Available label"
+  },
+  "appointmentAt": "{date} at {time}",
+  "@appointmentAt": {
+    "description": "Appointment date and time format",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "goodMorning": "Good Morning",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "Good Afternoon",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "Good Evening",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "selectDoctor": "Select Doctor",
+  "@selectDoctor": {
+    "description": "Select doctor dialog title"
+  },
+  "appointmentCancelled": "Appointment cancelled",
+  "@appointmentCancelled": {
+    "description": "Appointment cancelled message"
+  },
+  "noAppointments": "No {status} Appointments",
+  "@noAppointments": {
+    "description": "No appointments message with status",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "yourAppointmentsWillAppearHere": "Your {status} appointments will appear here",
+  "@yourAppointmentsWillAppearHere": {
+    "description": "Empty state message for appointments",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "videoConsultation": "Video Consultation",
+  "@videoConsultation": {
+    "description": "Video consultation type label"
+  },
+  "inPersonVisit": "In-Person Visit",
+  "@inPersonVisit": {
+    "description": "In-person visit type label"
+  },
+  "symptomChecker": "Symptom Checker",
+  "@symptomChecker": {
+    "description": "Symptom checker title"
+  },
+  "describeSymptomsAndGetInsights": "Describe your symptoms and get preliminary health insights",
+  "@describeSymptomsAndGetInsights": {
+    "description": "Symptom checker description"
+  },
+  "notSubstituteForMedicalAdvice": "This is not a substitute for professional medical advice",
+  "@notSubstituteForMedicalAdvice": {
+    "description": "Medical advice disclaimer"
+  },
+  "selectedSymptoms": "Selected Symptoms",
+  "@selectedSymptoms": {
+    "description": "Selected symptoms section title"
+  },
+  "commonSymptoms": "Common Symptoms",
+  "@commonSymptoms": {
+    "description": "Common symptoms section title"
+  },
+  "addCustomSymptom": "Add Custom Symptom",
+  "@addCustomSymptom": {
+    "description": "Add custom symptom section title"
+  },
+  "enterCustomSymptom": "Enter custom symptom...",
+  "@enterCustomSymptom": {
+    "description": "Enter custom symptom hint"
+  },
+  "analyzeSymptoms": "Analyze Symptoms",
+  "@analyzeSymptoms": {
+    "description": "Analyze symptoms button"
+  },
+  "analysisResult": "Analysis Result",
+  "@analysisResult": {
+    "description": "Analysis result section title"
+  },
+  "pleaseDescribeSymptoms": "Please describe your symptoms or select from common symptoms",
+  "@pleaseDescribeSymptoms": {
+    "description": "Please describe symptoms message"
+  },
+  "groqApiKeyNotConfigured": "Groq API key is not configured. Please add it in settings (click the settings icon).",
+  "@groqApiKeyNotConfigured": {
+    "description": "Groq API key not configured message"
+  },
+  "fever": "Fever",
+  "@fever": {
+    "description": "Fever symptom"
+  },
+  "headache": "Headache",
+  "@headache": {
+    "description": "Headache symptom"
+  },
+  "cough": "Cough",
+  "@cough": {
+    "description": "Cough symptom"
+  },
+  "fatigue": "Fatigue",
+  "@fatigue": {
+    "description": "Fatigue symptom"
+  },
+  "nausea": "Nausea",
+  "@nausea": {
+    "description": "Nausea symptom"
+  },
+  "bodyPain": "Body Pain",
+  "@bodyPain": {
+    "description": "Body pain symptom"
+  },
+  "soreThroat": "Sore Throat",
+  "@soreThroat": {
+    "description": "Sore throat symptom"
+  },
+  "runnyNose": "Runny Nose",
+  "@runnyNose": {
+    "description": "Runny nose symptom"
+  },
+  "dizziness": "Dizziness",
+  "@dizziness": {
+    "description": "Dizziness symptom"
+  },
+  "chestPain": "Chest Pain",
+  "@chestPain": {
+    "description": "Chest pain symptom"
   }
 }
 

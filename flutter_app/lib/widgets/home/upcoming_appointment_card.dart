@@ -84,7 +84,7 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
                 onPressed: () {
                   appState.setTabIndex(1); // Navigate to appointments tab
                 },
-                child: const Text('View All'),
+                child: Text(l10n.viewAll),
               ),
             ],
           ),
@@ -191,10 +191,10 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
                         child: Text(
                           appointment.type == AppointmentType.video &&
                                   appointment.googleMeetLink != null
-                              ? 'Join Google Meet'
+                              ? l10n.joinGoogleMeet
                               : appointment.type == AppointmentType.video
-                                  ? 'Join Now'
-                                  : 'View Details',
+                                  ? l10n.joinNow
+                                  : l10n.viewDetails,
                         ),
                       ),
                     ),
@@ -209,7 +209,7 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
                           vertical: 12,
                         ),
                       ),
-                      child: const Text('Reschedule'),
+                      child: Text(l10n.reschedule),
                     ),
                   ],
                 ),
@@ -234,9 +234,10 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
         }
       } catch (e) {
         if (context.mounted) {
+          final l10n = AppLocalizations.of(context)!;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Could not open Google Meet link: $e'),
+              content: Text('${l10n.couldNotOpenGoogleMeetLink}: $e'),
               backgroundColor: AppTheme.destructiveColor,
             ),
           );
@@ -251,9 +252,10 @@ class _UpcomingAppointmentCardState extends State<UpcomingAppointmentCard> {
 
   Future<void> _showRescheduleDialog(BuildContext context, Appointment appointment) async {
     if (appointment.doctorId == null) {
+      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Cannot reschedule: Doctor information missing'),
+        SnackBar(
+          content: Text(l10n.cannotRescheduleDoctorInfoMissing),
           backgroundColor: AppTheme.destructiveColor,
         ),
       );
@@ -357,6 +359,8 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
         final startTime = schedule['start_time'] as String?;
         final endTime = schedule['end_time'] as String?;
         if (startTime != null && endTime != null) {
+          // Note: We can't use l10n here as this is called from initState
+          // The schedule info will be displayed in the dialog which has access to context
           scheduleText = 'Available: $startTime - $endTime';
         }
       } else if (message != null && slots.isEmpty) {
@@ -394,9 +398,10 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
   }
 
   Future<void> _rescheduleAppointment() async {
+    final l10n = AppLocalizations.of(context)!;
     if (_selectedDate == null || _selectedTimeSlot == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please select date and time slot')),
+        SnackBar(content: Text(l10n.pleaseSelectDateAndTimeSlot)),
       );
       return;
     }
@@ -418,9 +423,10 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
       if (success && mounted) {
         Navigator.pop(context);
         widget.onRescheduled();
+        final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Appointment rescheduled successfully!'),
+          SnackBar(
+            content: Text(l10n.appointmentRescheduledSuccessfully),
             backgroundColor: AppTheme.successColor,
           ),
         );
@@ -449,9 +455,10 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return AlertDialog(
-      title: const Text('Reschedule Appointment'),
+      title: Text(l10n.rescheduleAppointment),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -468,12 +475,12 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Current Appointment',
+                    l10n.currentAppointment,
                     style: theme.textTheme.titleSmall,
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '${widget.appointment.date} at ${widget.appointment.time}',
+                    l10n.appointmentAt(widget.appointment.date, widget.appointment.time),
                     style: theme.textTheme.bodyMedium,
                   ),
                 ],
@@ -483,7 +490,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
             
             // Date Selection
             Text(
-              'New Date',
+              l10n.newDate,
               style: theme.textTheme.titleSmall,
             ),
             const SizedBox(height: 8),
@@ -501,7 +508,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
             // Time Slot Selection
             if (_selectedDate != null) ...[
               Text(
-                'Available Time Slots',
+                l10n.availableTimeSlots,
                 style: theme.textTheme.titleSmall,
               ),
               if (_scheduleInfo != null) ...[
@@ -531,7 +538,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    'No available slots for this date',
+                    l10n.noAvailableSlotsForThisDate,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: AppTheme.mutedForeground,
                     ),
@@ -596,7 +603,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
                 ),
             ] else ...[
               Text(
-                'Time',
+                l10n.time,
                 style: theme.textTheme.titleSmall,
               ),
               const SizedBox(height: 8),
@@ -607,7 +614,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
-                  'Please select a date first to see available time slots',
+                  l10n.pleaseSelectDateFirst,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: AppTheme.mutedForeground,
                   ),
@@ -621,7 +628,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
       actions: [
         TextButton(
           onPressed: _isLoading ? null : () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(l10n.cancel),
         ),
         ElevatedButton(
           onPressed: _isLoading ? null : _rescheduleAppointment,
@@ -631,7 +638,7 @@ class _RescheduleDialogState extends State<_RescheduleDialog> {
                   height: 20,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
-              : const Text('Reschedule'),
+              : Text(l10n.reschedule),
         ),
       ],
     );

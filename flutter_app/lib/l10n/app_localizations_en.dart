@@ -313,4 +313,204 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get availableDoctors => 'Available Doctors';
+
+  @override
+  String get doctors => 'Doctors';
+
+  @override
+  String get pharmacies => 'Pharmacies';
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get searchForDoctorsByNameOrSpecialty =>
+      'Search for doctors by name or specialty';
+
+  @override
+  String get searchForNearbyPharmacies => 'Search for nearby pharmacies';
+
+  @override
+  String get findNearbyPharmacies => 'Find Nearby Pharmacies';
+
+  @override
+  String get useYourLocationToFindPharmacies =>
+      'Use your location to find pharmacies near you';
+
+  @override
+  String get bookNow => 'Book Now';
+
+  @override
+  String get unavailable => 'Unavailable';
+
+  @override
+  String get bookAppointment => 'Book Appointment';
+
+  @override
+  String bookAppointmentWith(String doctorName) {
+    return 'Book Appointment with $doctorName';
+  }
+
+  @override
+  String get topDoctors => 'Top Doctors';
+
+  @override
+  String get findADoctor => 'Find a Doctor';
+
+  @override
+  String get consultationFee => 'Consultation Fee';
+
+  @override
+  String get joinGoogleMeet => 'Join Google Meet';
+
+  @override
+  String get joinNow => 'Join Now';
+
+  @override
+  String get viewDetails => 'View Details';
+
+  @override
+  String get reschedule => 'Reschedule';
+
+  @override
+  String get rescheduleAppointment => 'Reschedule Appointment';
+
+  @override
+  String get currentAppointment => 'Current Appointment';
+
+  @override
+  String get newDate => 'New Date';
+
+  @override
+  String get availableTimeSlots => 'Available Time Slots';
+
+  @override
+  String get noAvailableSlotsForThisDate => 'No available slots for this date';
+
+  @override
+  String get time => 'Time';
+
+  @override
+  String get pleaseSelectDateFirst =>
+      'Please select a date first to see available time slots';
+
+  @override
+  String get pleaseSelectDateAndTimeSlot => 'Please select date and time slot';
+
+  @override
+  String get appointmentRescheduledSuccessfully =>
+      'Appointment rescheduled successfully!';
+
+  @override
+  String get cannotRescheduleDoctorInfoMissing =>
+      'Cannot reschedule: Doctor information missing';
+
+  @override
+  String get couldNotOpenGoogleMeetLink => 'Could not open Google Meet link';
+
+  @override
+  String get available => 'Available';
+
+  @override
+  String appointmentAt(String date, String time) {
+    return '$date at $time';
+  }
+
+  @override
+  String get goodMorning => 'Good Morning';
+
+  @override
+  String get goodAfternoon => 'Good Afternoon';
+
+  @override
+  String get goodEvening => 'Good Evening';
+
+  @override
+  String get selectDoctor => 'Select Doctor';
+
+  @override
+  String get appointmentCancelled => 'Appointment cancelled';
+
+  @override
+  String noAppointments(String status) {
+    return 'No $status Appointments';
+  }
+
+  @override
+  String yourAppointmentsWillAppearHere(String status) {
+    return 'Your $status appointments will appear here';
+  }
+
+  @override
+  String get videoConsultation => 'Video Consultation';
+
+  @override
+  String get inPersonVisit => 'In-Person Visit';
+
+  @override
+  String get symptomChecker => 'Symptom Checker';
+
+  @override
+  String get describeSymptomsAndGetInsights =>
+      'Describe your symptoms and get preliminary health insights';
+
+  @override
+  String get notSubstituteForMedicalAdvice =>
+      'This is not a substitute for professional medical advice';
+
+  @override
+  String get selectedSymptoms => 'Selected Symptoms';
+
+  @override
+  String get commonSymptoms => 'Common Symptoms';
+
+  @override
+  String get addCustomSymptom => 'Add Custom Symptom';
+
+  @override
+  String get enterCustomSymptom => 'Enter custom symptom...';
+
+  @override
+  String get analyzeSymptoms => 'Analyze Symptoms';
+
+  @override
+  String get analysisResult => 'Analysis Result';
+
+  @override
+  String get pleaseDescribeSymptoms =>
+      'Please describe your symptoms or select from common symptoms';
+
+  @override
+  String get groqApiKeyNotConfigured =>
+      'Groq API key is not configured. Please add it in settings (click the settings icon).';
+
+  @override
+  String get fever => 'Fever';
+
+  @override
+  String get headache => 'Headache';
+
+  @override
+  String get cough => 'Cough';
+
+  @override
+  String get fatigue => 'Fatigue';
+
+  @override
+  String get nausea => 'Nausea';
+
+  @override
+  String get bodyPain => 'Body Pain';
+
+  @override
+  String get soreThroat => 'Sore Throat';
+
+  @override
+  String get runnyNose => 'Runny Nose';
+
+  @override
+  String get dizziness => 'Dizziness';
+
+  @override
+  String get chestPain => 'Chest Pain';
 }

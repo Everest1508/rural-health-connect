@@ -403,6 +403,273 @@
   "availableDoctors": "उपलब्ध डॉक्टर",
   "@availableDoctors": {
     "description": "Available doctors section title"
+  },
+  "doctors": "डॉक्टर",
+  "@doctors": {
+    "description": "Doctors tab label"
+  },
+  "pharmacies": "फार्मेसी",
+  "@pharmacies": {
+    "description": "Pharmacies tab label"
+  },
+  "retry": "पुनः प्रयास करें",
+  "@retry": {
+    "description": "Retry button"
+  },
+  "searchForDoctorsByNameOrSpecialty": "नाम या विशेषज्ञता से डॉक्टर खोजें",
+  "@searchForDoctorsByNameOrSpecialty": {
+    "description": "Search empty state message for doctors"
+  },
+  "searchForNearbyPharmacies": "आस-पास की फार्मेसी खोजें",
+  "@searchForNearbyPharmacies": {
+    "description": "Search empty state message for pharmacies"
+  },
+  "findNearbyPharmacies": "निकटतम फार्मेसी खोजें",
+  "@findNearbyPharmacies": {
+    "description": "Find nearby pharmacies title and button"
+  },
+  "useYourLocationToFindPharmacies": "आस-पास की फार्मेसी खोजने के लिए अपना स्थान उपयोग करें",
+  "@useYourLocationToFindPharmacies": {
+    "description": "Use location to find pharmacies description"
+  },
+  "bookNow": "अभी बुक करें",
+  "@bookNow": {
+    "description": "Book now button"
+  },
+  "unavailable": "अनुपलब्ध",
+  "@unavailable": {
+    "description": "Unavailable status"
+  },
+  "bookAppointment": "अपॉइंटमेंट बुक करें",
+  "@bookAppointment": {
+    "description": "Book appointment button and dialog title"
+  },
+  "bookAppointmentWith": "{doctorName} के साथ अपॉइंटमेंट बुक करें",
+  "@bookAppointmentWith": {
+    "description": "Book appointment dialog title with doctor name",
+    "placeholders": {
+      "doctorName": {
+        "type": "String"
+      }
+    }
+  },
+  "topDoctors": "शीर्ष डॉक्टर",
+  "@topDoctors": {
+    "description": "Top doctors section title"
+  },
+  "findADoctor": "डॉक्टर खोजें",
+  "@findADoctor": {
+    "description": "Find a doctor screen title"
+  },
+  "consultationFee": "परामर्श शुल्क",
+  "@consultationFee": {
+    "description": "Consultation fee label"
+  },
+  "joinGoogleMeet": "Google Meet में शामिल हों",
+  "@joinGoogleMeet": {
+    "description": "Join Google Meet button"
+  },
+  "joinNow": "अभी शामिल हों",
+  "@joinNow": {
+    "description": "Join now button"
+  },
+  "viewDetails": "विवरण देखें",
+  "@viewDetails": {
+    "description": "View details button"
+  },
+  "reschedule": "पुनर्निर्धारित करें",
+  "@reschedule": {
+    "description": "Reschedule button"
+  },
+  "rescheduleAppointment": "अपॉइंटमेंट पुनर्निर्धारित करें",
+  "@rescheduleAppointment": {
+    "description": "Reschedule appointment dialog title"
+  },
+  "currentAppointment": "वर्तमान अपॉइंटमेंट",
+  "@currentAppointment": {
+    "description": "Current appointment label"
+  },
+  "newDate": "नई तारीख",
+  "@newDate": {
+    "description": "New date label"
+  },
+  "availableTimeSlots": "उपलब्ध समय स्लॉट",
+  "@availableTimeSlots": {
+    "description": "Available time slots label"
+  },
+  "noAvailableSlotsForThisDate": "इस तारीख के लिए कोई उपलब्ध स्लॉट नहीं",
+  "@noAvailableSlotsForThisDate": {
+    "description": "No available slots message"
+  },
+  "time": "समय",
+  "@time": {
+    "description": "Time label"
+  },
+  "pleaseSelectDateFirst": "कृपया उपलब्ध समय स्लॉट देखने के लिए पहले तारीख चुनें",
+  "@pleaseSelectDateFirst": {
+    "description": "Please select date first message"
+  },
+  "pleaseSelectDateAndTimeSlot": "कृपया तारीख और समय स्लॉट चुनें",
+  "@pleaseSelectDateAndTimeSlot": {
+    "description": "Please select date and time slot message"
+  },
+  "appointmentRescheduledSuccessfully": "अपॉइंटमेंट सफलतापूर्वक पुनर्निर्धारित किया गया!",
+  "@appointmentRescheduledSuccessfully": {
+    "description": "Appointment rescheduled success message"
+  },
+  "cannotRescheduleDoctorInfoMissing": "पुनर्निर्धारित नहीं कर सकते: डॉक्टर की जानकारी गायब है",
+  "@cannotRescheduleDoctorInfoMissing": {
+    "description": "Cannot reschedule error message"
+  },
+  "couldNotOpenGoogleMeetLink": "Google Meet लिंक नहीं खोल सके",
+  "@couldNotOpenGoogleMeetLink": {
+    "description": "Could not open Google Meet link error"
+  },
+  "available": "उपलब्ध",
+  "@available": {
+    "description": "Available label"
+  },
+  "appointmentAt": "{date} को {time}",
+  "@appointmentAt": {
+    "description": "Appointment date and time format",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "goodMorning": "सुप्रभात",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "नमस्कार",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "शुभ संध्या",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "selectDoctor": "डॉक्टर चुनें",
+  "@selectDoctor": {
+    "description": "Select doctor dialog title"
+  },
+  "appointmentCancelled": "अपॉइंटमेंट रद्द कर दिया गया",
+  "@appointmentCancelled": {
+    "description": "Appointment cancelled message"
+  },
+  "noAppointments": "कोई {status} अपॉइंटमेंट नहीं",
+  "@noAppointments": {
+    "description": "No appointments message with status",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "yourAppointmentsWillAppearHere": "आपके {status} अपॉइंटमेंट यहाँ दिखाई देंगे",
+  "@yourAppointmentsWillAppearHere": {
+    "description": "Empty state message for appointments",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "videoConsultation": "वीडियो परामर्श",
+  "@videoConsultation": {
+    "description": "Video consultation type label"
+  },
+  "inPersonVisit": "व्यक्तिगत दौरा",
+  "@inPersonVisit": {
+    "description": "In-person visit type label"
+  },
+  "symptomChecker": "लक्षण जांचकर्ता",
+  "@symptomChecker": {
+    "description": "Symptom checker title"
+  },
+  "describeSymptomsAndGetInsights": "अपने लक्षणों का वर्णन करें और प्रारंभिक स्वास्थ्य अंतर्दृष्टि प्राप्त करें",
+  "@describeSymptomsAndGetInsights": {
+    "description": "Symptom checker description"
+  },
+  "notSubstituteForMedicalAdvice": "यह पेशेवर चिकित्सा सलाह का विकल्प नहीं है",
+  "@notSubstituteForMedicalAdvice": {
+    "description": "Medical advice disclaimer"
+  },
+  "selectedSymptoms": "चयनित लक्षण",
+  "@selectedSymptoms": {
+    "description": "Selected symptoms section title"
+  },
+  "commonSymptoms": "सामान्य लक्षण",
+  "@commonSymptoms": {
+    "description": "Common symptoms section title"
+  },
+  "addCustomSymptom": "कस्टम लक्षण जोड़ें",
+  "@addCustomSymptom": {
+    "description": "Add custom symptom section title"
+  },
+  "enterCustomSymptom": "कस्टम लक्षण दर्ज करें...",
+  "@enterCustomSymptom": {
+    "description": "Enter custom symptom hint"
+  },
+  "analyzeSymptoms": "लक्षणों का विश्लेषण करें",
+  "@analyzeSymptoms": {
+    "description": "Analyze symptoms button"
+  },
+  "analysisResult": "विश्लेषण परिणाम",
+  "@analysisResult": {
+    "description": "Analysis result section title"
+  },
+  "pleaseDescribeSymptoms": "कृपया अपने लक्षणों का वर्णन करें या सामान्य लक्षणों में से चुनें",
+  "@pleaseDescribeSymptoms": {
+    "description": "Please describe symptoms message"
+  },
+  "groqApiKeyNotConfigured": "Groq API कुंजी कॉन्फ़िगर नहीं की गई है। कृपया इसे सेटिंग्स में जोड़ें (सेटिंग्स आइकन पर क्लिक करें)।",
+  "@groqApiKeyNotConfigured": {
+    "description": "Groq API key not configured message"
+  },
+  "fever": "बुखार",
+  "@fever": {
+    "description": "Fever symptom"
+  },
+  "headache": "सिरदर्द",
+  "@headache": {
+    "description": "Headache symptom"
+  },
+  "cough": "खांसी",
+  "@cough": {
+    "description": "Cough symptom"
+  },
+  "fatigue": "थकान",
+  "@fatigue": {
+    "description": "Fatigue symptom"
+  },
+  "nausea": "मतली",
+  "@nausea": {
+    "description": "Nausea symptom"
+  },
+  "bodyPain": "शरीर में दर्द",
+  "@bodyPain": {
+    "description": "Body pain symptom"
+  },
+  "soreThroat": "गले में खराश",
+  "@soreThroat": {
+    "description": "Sore throat symptom"
+  },
+  "runnyNose": "नाक बहना",
+  "@runnyNose": {
+    "description": "Runny nose symptom"
+  },
+  "dizziness": "चक्कर आना",
+  "@dizziness": {
+    "description": "Dizziness symptom"
+  },
+  "chestPain": "छाती में दर्द",
+  "@chestPain": {
+    "description": "Chest pain symptom"
   }
 }
 

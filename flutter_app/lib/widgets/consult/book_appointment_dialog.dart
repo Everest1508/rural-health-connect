@@ -177,8 +177,9 @@ class _BookAppointmentDialogState extends State<BookAppointmentDialog> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
+    final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: Text('Book Appointment with ${widget.doctor.name}'),
+      title: Text(l10n.bookAppointmentWith(widget.doctor.name)),
       content: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -388,7 +389,7 @@ class _BookAppointmentDialogState extends State<BookAppointmentDialog> {
                   height: 20,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
-              : const Text('Book Appointment'),
+              : Text(l10n.bookAppointment),
         ),
       ],
     );

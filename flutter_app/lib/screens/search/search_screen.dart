@@ -88,8 +88,22 @@ class _SearchScreenState extends State<SearchScreen> {
       );
       
       setState(() {
-        _doctors = results['doctors'] as List<Doctor>;
-        _pharmacists = results['pharmacists'] as List<Pharmacist>;
+        // Safely cast the results
+        final doctorsList = results['doctors'];
+        final pharmacistsList = results['pharmacists'];
+        
+        if (doctorsList is List) {
+          _doctors = doctorsList.map((item) => item as Doctor).toList();
+        } else {
+          _doctors = [];
+        }
+        
+        if (pharmacistsList is List) {
+          _pharmacists = pharmacistsList.map((item) => item as Pharmacist).toList();
+        } else {
+          _pharmacists = [];
+        }
+        
         _isLoading = false;
       });
     } catch (e) {
@@ -116,7 +130,7 @@ class _SearchScreenState extends State<SearchScreen> {
             controller: _searchController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: 'Search doctors, medicines...',
+              hintText: l10n.searchDoctors,
               border: InputBorder.none,
               contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               hintStyle: theme.textTheme.bodyLarge?.copyWith(
@@ -155,10 +169,10 @@ class _SearchScreenState extends State<SearchScreen> {
             child: Row(
               children: [
                 Expanded(
-                  child: _buildTab(0, 'Doctors', theme),
+                  child: _buildTab(0, l10n.doctors, theme),
                 ),
                 Expanded(
-                  child: _buildTab(1, 'Pharmacies', theme),
+                  child: _buildTab(1, l10n.pharmacies, theme),
                 ),
               ],
             ),
@@ -228,7 +242,7 @@ class _SearchScreenState extends State<SearchScreen> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _performSearch,
-              child: const Text('Retry'),
+              child: Text(l10n.retry),
             ),
           ],
         ),
@@ -247,14 +261,14 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             const SizedBox(height: 16),
             Text(
-              'Start typing to search',
+              l10n.startTypingToSearch,
               style: theme.textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
             Text(
               _selectedTab == 0
-                  ? 'Search for doctors by name or specialty'
-                  : 'Search for nearby pharmacies',
+                  ? l10n.searchForDoctorsByNameOrSpecialty
+                  : l10n.searchForNearbyPharmacies,
               style: theme.textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
@@ -371,12 +385,12 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             const SizedBox(height: 16),
             Text(
-              'Find Nearby Pharmacies',
+              l10n.findNearbyPharmacies,
               style: theme.textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
             Text(
-              'Use your location to find pharmacies near you',
+              l10n.useYourLocationToFindPharmacies,
               style: theme.textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
@@ -408,7 +422,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 }
               },
               icon: const Icon(Icons.location_on),
-              label: const Text('Find Nearby Pharmacies'),
+              label: Text(l10n.findNearbyPharmacies),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               ),

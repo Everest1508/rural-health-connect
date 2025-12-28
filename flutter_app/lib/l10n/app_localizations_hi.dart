@@ -313,4 +313,205 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get availableDoctors => 'उपलब्ध डॉक्टर';
+
+  @override
+  String get doctors => 'डॉक्टर';
+
+  @override
+  String get pharmacies => 'फार्मेसी';
+
+  @override
+  String get retry => 'पुनः प्रयास करें';
+
+  @override
+  String get searchForDoctorsByNameOrSpecialty =>
+      'नाम या विशेषज्ञता से डॉक्टर खोजें';
+
+  @override
+  String get searchForNearbyPharmacies => 'आस-पास की फार्मेसी खोजें';
+
+  @override
+  String get findNearbyPharmacies => 'निकटतम फार्मेसी खोजें';
+
+  @override
+  String get useYourLocationToFindPharmacies =>
+      'आस-पास की फार्मेसी खोजने के लिए अपना स्थान उपयोग करें';
+
+  @override
+  String get bookNow => 'अभी बुक करें';
+
+  @override
+  String get unavailable => 'अनुपलब्ध';
+
+  @override
+  String get bookAppointment => 'अपॉइंटमेंट बुक करें';
+
+  @override
+  String bookAppointmentWith(String doctorName) {
+    return '$doctorName के साथ अपॉइंटमेंट बुक करें';
+  }
+
+  @override
+  String get topDoctors => 'शीर्ष डॉक्टर';
+
+  @override
+  String get findADoctor => 'डॉक्टर खोजें';
+
+  @override
+  String get consultationFee => 'परामर्श शुल्क';
+
+  @override
+  String get joinGoogleMeet => 'Google Meet में शामिल हों';
+
+  @override
+  String get joinNow => 'अभी शामिल हों';
+
+  @override
+  String get viewDetails => 'विवरण देखें';
+
+  @override
+  String get reschedule => 'पुनर्निर्धारित करें';
+
+  @override
+  String get rescheduleAppointment => 'अपॉइंटमेंट पुनर्निर्धारित करें';
+
+  @override
+  String get currentAppointment => 'वर्तमान अपॉइंटमेंट';
+
+  @override
+  String get newDate => 'नई तारीख';
+
+  @override
+  String get availableTimeSlots => 'उपलब्ध समय स्लॉट';
+
+  @override
+  String get noAvailableSlotsForThisDate =>
+      'इस तारीख के लिए कोई उपलब्ध स्लॉट नहीं';
+
+  @override
+  String get time => 'समय';
+
+  @override
+  String get pleaseSelectDateFirst =>
+      'कृपया उपलब्ध समय स्लॉट देखने के लिए पहले तारीख चुनें';
+
+  @override
+  String get pleaseSelectDateAndTimeSlot => 'कृपया तारीख और समय स्लॉट चुनें';
+
+  @override
+  String get appointmentRescheduledSuccessfully =>
+      'अपॉइंटमेंट सफलतापूर्वक पुनर्निर्धारित किया गया!';
+
+  @override
+  String get cannotRescheduleDoctorInfoMissing =>
+      'पुनर्निर्धारित नहीं कर सकते: डॉक्टर की जानकारी गायब है';
+
+  @override
+  String get couldNotOpenGoogleMeetLink => 'Google Meet लिंक नहीं खोल सके';
+
+  @override
+  String get available => 'उपलब्ध';
+
+  @override
+  String appointmentAt(String date, String time) {
+    return '$date को $time';
+  }
+
+  @override
+  String get goodMorning => 'सुप्रभात';
+
+  @override
+  String get goodAfternoon => 'नमस्कार';
+
+  @override
+  String get goodEvening => 'शुभ संध्या';
+
+  @override
+  String get selectDoctor => 'डॉक्टर चुनें';
+
+  @override
+  String get appointmentCancelled => 'अपॉइंटमेंट रद्द कर दिया गया';
+
+  @override
+  String noAppointments(String status) {
+    return 'कोई $status अपॉइंटमेंट नहीं';
+  }
+
+  @override
+  String yourAppointmentsWillAppearHere(String status) {
+    return 'आपके $status अपॉइंटमेंट यहाँ दिखाई देंगे';
+  }
+
+  @override
+  String get videoConsultation => 'वीडियो परामर्श';
+
+  @override
+  String get inPersonVisit => 'व्यक्तिगत दौरा';
+
+  @override
+  String get symptomChecker => 'लक्षण जांचकर्ता';
+
+  @override
+  String get describeSymptomsAndGetInsights =>
+      'अपने लक्षणों का वर्णन करें और प्रारंभिक स्वास्थ्य अंतर्दृष्टि प्राप्त करें';
+
+  @override
+  String get notSubstituteForMedicalAdvice =>
+      'यह पेशेवर चिकित्सा सलाह का विकल्प नहीं है';
+
+  @override
+  String get selectedSymptoms => 'चयनित लक्षण';
+
+  @override
+  String get commonSymptoms => 'सामान्य लक्षण';
+
+  @override
+  String get addCustomSymptom => 'कस्टम लक्षण जोड़ें';
+
+  @override
+  String get enterCustomSymptom => 'कस्टम लक्षण दर्ज करें...';
+
+  @override
+  String get analyzeSymptoms => 'लक्षणों का विश्लेषण करें';
+
+  @override
+  String get analysisResult => 'विश्लेषण परिणाम';
+
+  @override
+  String get pleaseDescribeSymptoms =>
+      'कृपया अपने लक्षणों का वर्णन करें या सामान्य लक्षणों में से चुनें';
+
+  @override
+  String get groqApiKeyNotConfigured =>
+      'Groq API कुंजी कॉन्फ़िगर नहीं की गई है। कृपया इसे सेटिंग्स में जोड़ें (सेटिंग्स आइकन पर क्लिक करें)।';
+
+  @override
+  String get fever => 'बुखार';
+
+  @override
+  String get headache => 'सिरदर्द';
+
+  @override
+  String get cough => 'खांसी';
+
+  @override
+  String get fatigue => 'थकान';
+
+  @override
+  String get nausea => 'मतली';
+
+  @override
+  String get bodyPain => 'शरीर में दर्द';
+
+  @override
+  String get soreThroat => 'गले में खराश';
+
+  @override
+  String get runnyNose => 'नाक बहना';
+
+  @override
+  String get dizziness => 'चक्कर आना';
+
+  @override
+  String get chestPain => 'छाती में दर्द';
 }
