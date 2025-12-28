@@ -439,13 +439,11 @@ class ProfileScreen extends StatelessWidget {
         width: 64,
         height: 64,
         decoration: BoxDecoration(
-          gradient: AppTheme.primaryGradient,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: const Icon(
-          Icons.medical_services,
-          color: Colors.white,
-          size: 32,
+        child: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.cover,
         ),
       ),
       children: [

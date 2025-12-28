@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           }
           
           return MaterialApp(
-            title: 'Rural Health Connect',
+            title: 'Swasth Setu',
             debugShowCheckedModeBanner: false,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
