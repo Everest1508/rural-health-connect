@@ -97,22 +97,7 @@ class _SymptomCheckerViewState extends State<SymptomCheckerView> {
     });
     
     try {
-      // Check if Groq API key is configured
-      final groqKey = await ApiConfigService.getGroqApiKey();
-      if (groqKey == null || groqKey.isEmpty) {
-        if (mounted) {
-          final l10n = AppLocalizations.of(context)!;
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.groqApiKeyNotConfigured),
-              backgroundColor: AppTheme.destructiveColor,
-              duration: const Duration(seconds: 5),
-            ),
-          );
-        }
-        return;
-      }
-      
+      // Groq API key is configured on the server side, no need to check here
       final result = await _symptomCheckerService.analyzeSymptoms(fullSymptoms);
       
       if (mounted) {

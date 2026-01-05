@@ -1,24 +1,14 @@
 import 'package:dio/dio.dart';
 import 'api_client.dart';
-import '../../core/services/api_config_service.dart';
 import '../../core/utils/error_handler.dart';
 
 class SymptomCheckerService {
   final ApiClient _api = ApiClient();
   
   /// Analyze symptoms using Groq API via backend
+  /// The Groq API key is configured on the server side
   Future<Map<String, dynamic>> analyzeSymptoms(String symptoms) async {
     try {
-      // Get Groq API key from storage
-      final groqApiKey = await ApiConfigService.getGroqApiKey();
-      
-      if (groqApiKey == null || groqApiKey.isEmpty) {
-        return {
-          'success': false,
-          'error': 'Groq API key is not configured. Please add it in settings.'
-        };
-      }
-      
       if (symptoms.trim().isEmpty) {
         return {
           'success': false,
@@ -26,9 +16,9 @@ class SymptomCheckerService {
         };
       }
       
+      // Send only symptoms - Groq API key is handled by the backend
       final response = await _api.post('/appointments/symptom-checker/', data: {
         'symptoms': symptoms.trim(),
-        'groq_api_key': groqApiKey.trim(),
       });
       
       // Debug logging
